@@ -32,11 +32,11 @@ class convert():
     def htoYears(self):
         return self.htoMonths()/12
     def demo(self):
-        print ("Hours " , self.getVal())
-        print ("Days " , self.htoDays())
-        print ("Weeks " , self.htoWeeks())
-        print ("Months " , self.htoMonths())
-        print ("Years " , self.htoYears())
+        print ("Hours " , "{:,.1f}".format( self.getVal()) )
+        print ("Days " ,  "{:,.1f}".format(self.htoDays()) )
+        print ("Weeks " , "{:,.1f}".format(self.htoWeeks()) )
+        print ("Months " , "{:,.1f}".format( self.htoMonths()) )
+        print ("Years " , "{:,.1f}".format( self.htoYears()) )
 
 if __name__ == '__main__':
     m = convert()
