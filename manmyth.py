@@ -11,28 +11,44 @@ from convert import convert
 
 class myth():
 
-    conv = 0
-    workers = 1000
-    hoursper = 40 # 12*6
-    amount = 1000000 * 200
-    # 200 trillion = 15k x 12.82 billion global basic income?
+    conv = 225000
+    workers = 10*1000000
+    hoursper =  33 #40 # 12*6
+    amount = 25317568 # *10000000*1000
+    # 200 quadrillion = 15m x 12.82 billion global basic income?
     # us/ 15k x 320m. 4t per year...
     #us gdp 2020-1 = 20 trillion.
     #1mill x 1mill = 1 trillion.
     #1 million base. 10x 1000x get interesting....
-    hourly = 15  # lol more like 11....ish...
+    hourly = 33 #11  # lol more like 11....ish...
 
     def __init__(self):
-        self.conv = convert()
+        self.conv = convert(self.conv)
+
+    def setVal(self, v):
+        return self.conv.setVal(v)
 
     def getVal(self):
         return self.conv.getVal()
+        ## number of workers for set amount of time/amount
     def getWorker(self): return self.workers
     def setWorker(self, w): self.workers = w
 
 
+    def exponets(self, b, a):
+            tt = 2
+            tm = 0
+            for i in range(a):
+                msg = str(i+1) + ": b^n ~~ " + str(tt)
+                tt *= b
+                tm += tt*105
+                print( str(i+1)+ ' p ' , "{:,}".format( tt) , "{:,}".format( tm), "{:,}".format( tm-tt) )
+
+
     def demo(self):
         hrperyear = self.hoursper*52
+        yrhr = 24*7*52
+        offhr = yrhr - hrperyear
         w = self.amount / (hrperyear*self.hourly)
         self.workers = int(w)
         self.conv.setVal(hrperyear*self.workers)
@@ -40,16 +56,55 @@ class myth():
         print("hours per:", self.hoursper)
         print('52 weeks / One year..')
         print(str(hrperyear) + " hours per year per worker")
+        print(str(offhr) + " hours off")
+        print(" %" ,  "{:.2f}".format(100*hrperyear/yrhr) )
         print('hourly $: ' , str(self.hourly) )
         print('annual $: ' , "{:,}".format(hrperyear*self.hourly) )
 
+        print('weekly $: ' , "{:,}".format(self.hoursper * self.hourly) )
+        print()
         print("Workers: " ,"{:,}".format( self.workers) )
         print('annual $: ' , "{:,}".format(self.hourly*self.conv.getVal() ) )
-        print('Hours per year Total: ',"{:,}".format( self.conv.getVal()) )
+        print('rem $: ' , "{:,}".format(self.amount - hrperyear*self.hourly*self.workers) )
+        print('rem $: ' , "{:.2f}".format(self.amount - hrperyear*self.hourly*self.workers) )
+        print('Hours per year Total: ', "{:,}".format( self.conv.getVal()) )
         print("Converting for context...")
         self.conv.demo()
+        print("Years: ", "{:,.2f}".format( self.conv.htoYears() ) )
+
+
+    def d2(self):
+
+            print("----")
+            print( str(100*24))
+            # print("----")
+            # aa = 7000
+            # bb = 34359738368
+            # c = bb/aa
+            # print("..." , str( aa) )
+            # print("..." , str( bb) )
+            # print("..." , str( c) )
+            # cv = convert(aa)
+            # cv.demo()
+            # print("----")
+            m = myth()
+            print ("Hours " , m.getVal())
+            # m.demo()
+            m.exponets(2, 22)
+            m.exponets(3, 22)
+
 
 if __name__ == '__main__':
+
+    # c = 5
+    # print("..." , str( c) )
+    # cv = convert(c)
+    # # cv.setVal()
+    # cv.demo()
+    # print("----")
     m = myth()
-    print ("Hours " , m.getVal())
     m.demo()
+
+
+
+    # cv.printTime()
