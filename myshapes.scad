@@ -27,6 +27,9 @@
 
 fn = 50;
 
+
+sp(100, fn);
+
 module c(w, l, d){
     translate([0,0,0]) cube([w, l, d], center=true);
 }
@@ -39,7 +42,12 @@ module cy(d, h, f){
 }
 
 module sp(d, f){  
-    translate([0,0,0])    sphere(d=d, $fn=f, center=true);
+    hull(){
+    translate([0,0,0])    cy(d, 1);
+    rotate([0,90,0])    cy(d, 1);
+    rotate([90,0,0])    cy(d, 1); 
+//    translate([0,0,0])    cy(1, d);
+    }
 } 
 
 module rcy(d, h, c, fn){
