@@ -77,7 +77,7 @@ class convert():
         print ("M " , "{:,.1f}".format( self.htoYears()//1000 ) )
 
 if __name__ == '__main__':
-    t = 3833*1000*1000
+    t = 20*7*52 #*1000
     m = convert(t)
     # m.setVal(t)
     m.demo()
