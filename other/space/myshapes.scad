@@ -44,7 +44,9 @@ module cy(d, h, f){
 module sp(d, f){  
     hull(){
     translate([0,0,0])    cy(d, 1);
-    rotate([0,90,0])    cy(d, 1);
+        for(i=[0 :2]) 
+    rotate([0,120*i,0])    cy(d, 1);
+//    rotate([0,90,0])    cy(d, 1);
     rotate([90,0,0])    cy(d, 1); 
 //    translate([0,0,0])    cy(1, d);
     }

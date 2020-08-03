@@ -85,7 +85,7 @@ color("green")
 planet(earth*see, de, ave, 0);
 
 color("red")
-planet(mars*see, dm, avmars, 1);
+planet(mars*see, dm, avmars, -5);
 color("orange")
 planet(mer*see, dme, avmer, 0);
 color("orange")
@@ -110,7 +110,7 @@ color("blue") cy(see*111111, 1, fn);
 
 
 ee = 111111;
-vv = 1111;
+vv = 111;
 
 //function getPos( ) =  [vv*de*cos($t/pi), vv*de*sin($t/pi), 0];
 // function getPos( ) = [de, 0,0]; 
@@ -122,11 +122,11 @@ vv = 1111;
 //cc();
 
 ship(vv, 0);
-
+trip = dm - de;
 
 module ship(  av, off){
     a = av*1;
-       rotate([0,0, $t*a + off*11]) translate([0, ds, 0]) 
+       rotate([0,0, $t*a + off*11]) translate([0, ds + $t*trip, 0]) 
    rotate([0,-90, 0])  scale([ee, ee, ee])     cc();
     
 }

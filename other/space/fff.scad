@@ -13,13 +13,15 @@ fn = 60;
 //bd = 12;
 //h = 66;
 cd = 3; //cone diameter
-cdd = 5; 
+cdd = 7; 
 bd = 12;
-h = 55;
-    
+h = 44;
+   d2 = bd+3;
+   hh = 5;
+   
     
 fl = 3;
-fh = h/3;
+fh = h/2;
 fhh = h/9;
 
 td = 9;
@@ -51,14 +53,14 @@ module cc(){
 
 module maintanks(){   
         translate([0,0,11 ])  tank(4,  8);
-        translate([0,0,21 ])  tank(4,  8);
+        translate([0,0,24 ])  tank(6,  13);
    }
    
    
 module subtanks(){
          n = 8;
          a = 360/n;
-           for(j=[0:1]) translate([0,0, 12-j*15]) 
+           for(j=[0:1]) translate([0,0, 5-j*7]) 
        for(i=[0:n-1]) rotate([0,0, i*a]) translate([0,5, 0]) 
         translate([0,0,td ])  tank(5, 3);
    }
@@ -95,10 +97,13 @@ module cone(d, dd, h){
  
 module shell(d,c){
      hull(){
+         //nose
        translate([0,0, h+d])  sp(cd,   fn);
        translate([0,0, h+d-2])  sp(cdd,   fn);
+         
+         //body
        translate([0,0, h/2])  cy(d, h, fn);
-       translate([0,0, h/2])  cy(d+2, 3, fn);
+       translate([0,0, h/2])  cy(d2, hh, fn);
          
      }
     n = 3;
