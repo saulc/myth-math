@@ -42,7 +42,18 @@ class pitch:
     style = non
 
     name = 'one'
-    speed = 99
+    speed = 101
+    motion = 0
+    curve = 0
+    cx = 0
+    cy = 0
+    dv = 0
+    vx = 0
+    vy = 0
+
+    vi = [0, 0, 0]
+    vf = [0, 0, 0]
+    spin = [0, 0, 0]
     zone = 5
     # a b c d e
     # p 1 2 3 f
@@ -66,12 +77,12 @@ class pitcher:
 
 
 
-
+# at bat.
 class hitting:
     seasonAvgerage = 0
     seasons = [ ]
 
-    
+
 
     feildPos = 0
     # inf,  outf, pitch,  catch,  hit,  speed,
@@ -84,7 +95,7 @@ class hitting:
     pitches = 0
     hit = 0
     bunt = 0
-    rib = 0
+    rbi = 0
     era = 0
     hitAvg = 0
     swingxx = 0
@@ -98,7 +109,7 @@ class hitting:
     def __init__(self,  avg,  seasonNum):
         self.seasonAvgerage = Avg
         self.seasons = (seasonNum,  avg)
-
+# skill, agressiveness, speed, # XX:
 class feild:
     seasonAvgerage = 0
     seasons = [ ]

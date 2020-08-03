@@ -14,13 +14,14 @@ class myth():
     conv = 7250
     workers = 10*1000000
     hoursper =  33 #40 # 12*6
-    amount = 2031758 # *10000000*1000
+    amount = 93952 #1000*1000
+    # amount = 277031758 # *10000000*1000
     # 200 quadrillion = 15m x 12.82 billion global basic income?
     # us/ 15k x 320m. 4t per year...
     #us gdp 2020-1 = 20 trillion.
     #1mill x 1mill = 1 trillion.
     #1 million base. 10x 1000x get interesting....
-    hourly = 33 #11  # lol more like 11....ish...
+    hourly =  11  # lol more like 11....ish...
 
     def __init__(self):
         self.conv = convert(self.conv)

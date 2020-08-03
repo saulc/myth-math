@@ -25,9 +25,33 @@ class convert():
 
         return m
     }
+                print ("  " ,  "{:,.2f}".format( self.htoYears()) )
 '''
-    def __init__(self, v):
-        self.val = v
+    def __init__(self, v=0):
+        if v == 0: pass
+        else:  self.val = v
+
+
+    def readInput(self):
+        print("reading Input . . . ")
+        v = input()
+        words = v. split(' ')
+        i = 0
+        for w in words:
+            # split and process input for chainable operators
+            print ("  " ,i, w) 
+            i+=1
+        return str(v)
+
+
+    def getParams(self):
+        readInput()
+
+
+    def testStrings(self):
+        print(". . . --->AcMe rock.its<<---. . . ")
+        v = self.readInput()
+        print(v)
 
     def getVal(self):
         return self.val
@@ -77,8 +101,10 @@ class convert():
         print ("M " , "{:,.1f}".format( self.htoYears()//1000 ) )
 
 if __name__ == '__main__':
-    t = 20*7*52 #*1000
-    m = convert(t)
-    # m.setVal(t)
-    m.demo()
-    print( str(t) )
+    # t = 20*7*52 #*1000
+    # m = convert(t)
+    # # m.setVal(t)
+    # m.demo()
+    # print( str(t) )
+    m = convert()
+    m.testStrings()

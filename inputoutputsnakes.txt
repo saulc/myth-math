@@ -1,0 +1,1082 @@
+Last login: Mon Jul 27 21:40:24 on console
+userus-iMac:nodeui user$ ls
+index.html	inventory.js	myscripts.js	style.css
+userus-iMac:nodeui user$ node inventory.js 
+All Consoles
+[
+  { item: 'Sony PS4 Pro', price: 399.99 },
+  { item: 'Microsoft Xbox One X', price: 499.99 },
+  { item: 'Nintendo Switch', price: 299.99 },
+  { item: 'Sony PS2 Console', price: 299.99 },
+  { item: 'Nintendo 64', price: 199.999 }
+]
+filtering consoles for: nintendo
+[
+  { item: 'Nintendo Switch', price: 299.99 },
+  { item: 'Nintendo 64', price: 199.999 }
+]
+[
+  { item: 'a', price: 9.99, stock: 33 },
+  { item: 'At', price: 5, stock: 550 },
+  { item: 'X', price: 4.99, stock: 150 }
+]
+[
+  { item: 'a', price: 9.99, stock: 33, status: 'OK' },
+  { item: 'At', price: 5, stock: 550, status: 'OK' },
+  { item: 'X', price: 4.99, stock: 150, status: 'OK' }
+]
+[
+  { item: 'PS4 Pro', stock: 333, original: 399.99 },
+  { item: 'Xbox One X', stock: 111, original: 499.99, discount: 0.1 },
+  { item: 'Nintendo Switch', stock: 44, original: 299.99 },
+  { item: 'PS2 Console', stock: 122, original: 299.99, discount: 0.8 },
+  { item: 'Nintendo 64', stock: 222, original: 199.99, discount: 0.65 }
+]
+[
+  {
+    item: 'PS4 Pro',
+    stock: 333,
+    original: 399.99,
+    total: 133196.67,
+    sale: 399.99
+  },
+  {
+    item: 'Xbox One X',
+    stock: 111,
+    original: 499.99,
+    discount: 0.1,
+    total: 49949.001,
+    sale: 449.991
+  },
+  {
+    item: 'Nintendo Switch',
+    stock: 44,
+    original: 299.99,
+    total: 13199.560000000001,
+    sale: 299.99
+  },
+  {
+    item: 'PS2 Console',
+    stock: 122,
+    original: 299.99,
+    discount: 0.8,
+    total: 7319.7559999999985,
+    sale: 59.99799999999999
+  },
+  {
+    item: 'Nintendo 64',
+    stock: 222,
+    original: 199.99,
+    discount: 0.65,
+    total: 15539.223,
+    sale: 69.9965
+  }
+]
+userus-iMac:nodeui user$ clear
+
+userus-iMac:nodeui user$ ls
+index.html	inventory.js	myscripts.js	style.css
+userus-iMac:nodeui user$ cd .. 
+userus-iMac:node-js user$ ls
+LICENSE		README.md	Week01		Week02		Week03		nodeui		week2
+userus-iMac:node-js user$ cd .. 
+userus-iMac:dev user$ ls
+APad			Hw3			esk8calculator		node-js			tinypong
+ARcore			android final		hammerspoon		pi cam.py		touchpy
+AndroidMusic		androidcs		keys			play keys		xcode
+ArMem			androidcshw2.zip	logindemo		popular-movies-dee	youtube
+Arduino			calc esk8		mask			python-space-shooter
+CS-Robotics		chromeex		myth-math		samples
+CircleKeysConcept	django			net			tinyLed
+userus-iMac:dev user$ cd myth-math/
+userus-iMac:myth-math user$ ls
+LICENSE		__pycache__	convert.pyc	manmyth.py
+README.md	convert.py	led.py		rotation.py
+userus-iMac:myth-math user$ python3 convert.py
+Traceback (most recent call last):
+  File "convert.py", line 80, in <module>
+    m = convert()
+  File "convert.py", line 30, in __init__
+    self.val = v
+NameError: name 'v' is not defined
+userus-iMac:myth-math user$ python3 convert.py
+Traceback (most recent call last):
+  File "convert.py", line 80, in <module>
+    m = convert()
+TypeError: __init__() missing 1 required positional argument: 'v'
+userus-iMac:myth-math user$ python3 convert.py
+Hours  24,000,000.0
+Days  1,000,000.0
+Weeks  142,857.1
+Months  35,714.3
+Years  2,976.2
+24000000
+userus-iMac:myth-math user$ python3 manmyth.py 
+Traceback (most recent call last):
+  File "manmyth.py", line 99, in <module>
+    m = myth()
+  File "manmyth.py", line 26, in __init__
+    self.conv = convert()
+TypeError: __init__() missing 1 required positional argument: 'v'
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 25,317,568
+hours per: 33
+52 weeks / One year..
+1716 hours per year per worker
+hourly $:  11
+annual $:  18,876
+
+Workers:  1,341
+annual $:  25,312,716
+rem $:  4,852
+rem $:  4852.00
+Hours per year Total:  2,301,156
+Converting for context...
+Hours  2,301,156.0
+Days  95,881.5
+Weeks  13,697.4
+Months  3,424.3
+Years  285.4
+Years:  285.36
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 253,175,680,000,000,000
+hours per: 33
+52 weeks / One year..
+1716 hours per year per worker
+hourly $:  11
+annual $:  18,876
+
+Workers:  13,412,570,459,843
+annual $:  253,175,679,999,996,468
+rem $:  3,532
+rem $:  3532.00
+Hours per year Total:  23,015,970,909,090,588
+Converting for context...
+Hours  23,015,970,909,090,588.0
+Days  958,998,787,878,774.5
+Weeks  136,999,826,839,824.9
+Months  34,249,956,709,956.2
+Years  2,854,163,059,163.0
+Years:  2,854,163,059,163.02
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 253,175,680,000,000,000
+hours per: 33
+52 weeks / One year..
+1716 hours per year per worker
+hourly $:  11
+annual $:  18,876
+
+Workers:  13,412,570,459,843
+annual $:  253,175,679,999,996,468
+rem $:  3,532
+rem $:  3532.00
+Hours per year Total:  23,015,970,909,090,588
+Converting for context...
+Hours  23,015,970,909,090,588.0
+Days  958,998,787,878,774.5
+Weeks  136,999,826,839,824.9
+Months  34,249,956,709,956.2
+Years  2,854,163,059,163.0
+M  2,854,163,059.0
+Years:  2,854,163,059,163.02
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 253,175,680,000,000,000
+hours per: 33
+52 weeks / One year..
+1716 hours per year per worker
+hourly $:  88
+annual $:  151,008
+
+Workers:  1,676,571,307,480
+annual $:  253,175,679,999,939,840
+rem $:  60,160
+rem $:  60160.00
+Hours per year Total:  2,876,996,363,635,680
+Converting for context...
+Hours  2,876,996,363,635,680.0
+Days  119,874,848,484,820.0
+Weeks  17,124,978,354,974.3
+Months  4,281,244,588,743.6
+Years  356,770,382,395.3
+M  356,770,382.0
+Years:  356,770,382,395.30
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 253,175,680,000,000,000
+hours per: 33
+52 weeks / One year..
+1716 hours per year per worker
+7020 hours off
+hourly $:  88
+annual $:  151,008
+
+Workers:  1,676,571,307,480
+annual $:  253,175,679,999,939,840
+rem $:  60,160
+rem $:  60160.00
+Hours per year Total:  2,876,996,363,635,680
+Converting for context...
+Hours  2,876,996,363,635,680.0
+Days  119,874,848,484,820.0
+Weeks  17,124,978,354,974.3
+Months  4,281,244,588,743.6
+Years  356,770,382,395.3
+M  356,770,382.0
+Years:  356,770,382,395.30
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 253,175,680,000,000,000
+hours per: 33
+52 weeks / One year..
+1716 hours per year per worker
+7020 hours off
+Traceback (most recent call last):
+  File "manmyth.py", line 103, in <module>
+    m.demo()
+  File "manmyth.py", line 59, in demo
+    print(str(off/hrperyear) + " %")
+NameError: name 'off' is not defined
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 253,175,680,000,000,000
+hours per: 33
+52 weeks / One year..
+1716 hours per year per worker
+7020 hours off
+4.090909090909091 %
+hourly $:  88
+annual $:  151,008
+
+Workers:  1,676,571,307,480
+annual $:  253,175,679,999,939,840
+rem $:  60,160
+rem $:  60160.00
+Hours per year Total:  2,876,996,363,635,680
+Converting for context...
+Hours  2,876,996,363,635,680.0
+Days  119,874,848,484,820.0
+Weeks  17,124,978,354,974.3
+Months  4,281,244,588,743.6
+Years  356,770,382,395.3
+M  356,770,382.0
+Years:  356,770,382,395.30
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 253,175,680,000,000,000
+hours per: 55
+52 weeks / One year..
+2860 hours per year per worker
+5876 hours off
+2.0545454545454547 %
+hourly $:  88
+annual $:  251,680
+
+Workers:  1,005,942,784,488
+annual $:  253,175,679,999,939,840
+rem $:  60,160
+rem $:  60160.00
+Hours per year Total:  2,876,996,363,635,680
+Converting for context...
+Hours  2,876,996,363,635,680.0
+Days  119,874,848,484,820.0
+Weeks  17,124,978,354,974.3
+Months  4,281,244,588,743.6
+Years  356,770,382,395.3
+M  356,770,382.0
+Years:  356,770,382,395.30
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 253,175,680,000,000,000
+hours per: 55
+52 weeks / One year..
+2860 hours per year per worker
+5876 hours off
+0.3273809523809524 %
+hourly $:  88
+annual $:  251,680
+
+Workers:  1,005,942,784,488
+annual $:  253,175,679,999,939,840
+rem $:  60,160
+rem $:  60160.00
+Hours per year Total:  2,876,996,363,635,680
+Converting for context...
+Hours  2,876,996,363,635,680.0
+Days  119,874,848,484,820.0
+Weeks  17,124,978,354,974.3
+Months  4,281,244,588,743.6
+Years  356,770,382,395.3
+M  356,770,382.0
+Years:  356,770,382,395.30
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 253,175,680,000,000,000
+hours per: 55
+52 weeks / One year..
+2860 hours per year per worker
+5876 hours off
+32.73809523809524 %
+hourly $:  88
+annual $:  251,680
+
+Workers:  1,005,942,784,488
+annual $:  253,175,679,999,939,840
+rem $:  60,160
+rem $:  60160.00
+Hours per year Total:  2,876,996,363,635,680
+Converting for context...
+Hours  2,876,996,363,635,680.0
+Days  119,874,848,484,820.0
+Weeks  17,124,978,354,974.3
+Months  4,281,244,588,743.6
+Years  356,770,382,395.3
+M  356,770,382.0
+Years:  356,770,382,395.30
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 253,175,680,000,000,000
+hours per: 55
+52 weeks / One year..
+2860 hours per year per worker
+5876 hours off
+Traceback (most recent call last):
+  File "manmyth.py", line 104, in <module>
+    m.demo()
+  File "manmyth.py", line 60, in demo
+    print("{:. 2f}".format(100*hrperyear/yrhr) + " %")
+ValueError: Format specifier missing precision
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 253,175,680,000,000,000
+hours per: 55
+52 weeks / One year..
+2860 hours per year per worker
+5876 hours off
+Traceback (most recent call last):
+  File "manmyth.py", line 104, in <module>
+    m.demo()
+  File "manmyth.py", line 60, in demo
+    print(" %" ,  "{:. 2f}".format(100*hrperyear/yrhr) )
+ValueError: Format specifier missing precision
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 253,175,680,000,000,000
+hours per: 55
+52 weeks / One year..
+2860 hours per year per worker
+5876 hours off
+ % 32.74
+hourly $:  88
+annual $:  251,680
+
+Workers:  1,005,942,784,488
+annual $:  253,175,679,999,939,840
+rem $:  60,160
+rem $:  60160.00
+Hours per year Total:  2,876,996,363,635,680
+Converting for context...
+Hours  2,876,996,363,635,680.0
+Days  119,874,848,484,820.0
+Weeks  17,124,978,354,974.3
+Months  4,281,244,588,743.6
+Years  356,770,382,395.3
+M  356,770,382.0
+Years:  356,770,382,395.30
+userus-iMac:myth-math user$ clear
+
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 253,175,680,000,000,000
+hours per: 55
+52 weeks / One year..
+2860 hours per year per worker
+5876 hours off
+ % 32.74
+hourly $:  88
+annual $:  251,680
+
+Workers:  1,005,942,784,488
+annual $:  253,175,679,999,939,840
+rem $:  60,160
+rem $:  60160.00
+Hours per year Total:  2,876,996,363,635,680
+Converting for context...
+Hours  2,876,996,363,635,680.0
+Days  119,874,848,484,820.0
+Weeks  17,124,978,354,974.3
+Months  4,281,244,588,743.6
+Years  356,770,382,395.3
+M  356,770,382.0
+Years:  356,770,382,395.30
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 253,175,680,000,000,000
+hours per: 55
+52 weeks / One year..
+2860 hours per year per worker
+5876 hours off
+ % 32.74
+hourly $:  88
+annual $:  251,680
+
+daily $:  4,840
+Workers:  1,005,942,784,488
+annual $:  253,175,679,999,939,840
+rem $:  60,160
+rem $:  60160.00
+Hours per year Total:  2,876,996,363,635,680
+Converting for context...
+Hours  2,876,996,363,635,680.0
+Days  119,874,848,484,820.0
+Weeks  17,124,978,354,974.3
+Months  4,281,244,588,743.6
+Years  356,770,382,395.3
+M  356,770,382.0
+Years:  356,770,382,395.30
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 253,175,680,000,000,000
+hours per: 55
+52 weeks / One year..
+2860 hours per year per worker
+5876 hours off
+ % 32.74
+hourly $:  33
+annual $:  94,380
+
+daily $:  1,815
+Workers:  2,682,514,091,968
+annual $:  253,175,679,999,939,840
+rem $:  60,160
+rem $:  60160.00
+Hours per year Total:  7,671,990,303,028,480
+Converting for context...
+Hours  7,671,990,303,028,480.0
+Days  319,666,262,626,186.7
+Weeks  45,666,608,946,598.1
+Months  11,416,652,236,649.5
+Years  951,387,686,387.5
+M  951,387,686.0
+Years:  951,387,686,387.46
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 253,175,680,000,000,000
+hours per: 55
+52 weeks / One year..
+2860 hours per year per worker
+5876 hours off
+ % 32.74
+hourly $:  33
+annual $:  94,380
+weekly $:  1,815
+
+Workers:  2,682,514,091,968
+annual $:  253,175,679,999,939,840
+rem $:  60,160
+rem $:  60160.00
+Hours per year Total:  7,671,990,303,028,480
+Converting for context...
+Hours  7,671,990,303,028,480.0
+Days  319,666,262,626,186.7
+Weeks  45,666,608,946,598.1
+Months  11,416,652,236,649.5
+Years  951,387,686,387.5
+M  951,387,686.0
+Years:  951,387,686,387.46
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 253,175,680,000,000,000
+hours per: 33
+52 weeks / One year..
+1716 hours per year per worker
+7020 hours off
+ % 19.64
+hourly $:  33
+annual $:  56,628
+weekly $:  1,089
+
+Workers:  4,470,856,819,947
+annual $:  253,175,679,999,958,716
+rem $:  41,284
+rem $:  41284.00
+Hours per year Total:  7,671,990,303,029,052
+Converting for context...
+Hours  7,671,990,303,029,052.0
+Days  319,666,262,626,210.5
+Weeks  45,666,608,946,601.5
+Months  11,416,652,236,650.4
+Years  951,387,686,387.5
+M  951,387,686.0
+Years:  951,387,686,387.53
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 25,317,568
+hours per: 33
+52 weeks / One year..
+1716 hours per year per worker
+7020 hours off
+ % 19.64
+hourly $:  33
+annual $:  56,628
+weekly $:  1,089
+
+Workers:  447
+annual $:  25,312,716
+rem $:  4,852
+rem $:  4852.00
+Hours per year Total:  767,052
+Converting for context...
+Hours  767,052.0
+Days  31,960.5
+Weeks  4,565.8
+Months  1,141.4
+Years  95.1
+M  0.0
+Years:  95.12
+userus-iMac:myth-math user$ python3 convert.py
+Hours  38,330,000.0
+Days  1,597,083.3
+Weeks  228,154.8
+Months  57,038.7
+Years  4,753.2
+M  4.0
+38330000.0
+userus-iMac:myth-math user$ python3 convert.py
+Hours  3,833,000,000.0
+Days  159,708,333.3
+Weeks  22,815,476.2
+Months  5,703,869.0
+Years  475,322.4
+M  475.0
+3833000000
+userus-iMac:myth-math user$ clear
+
+userus-iMac:myth-math user$ python3 convert.py
+Hours  3,833,000,000.0
+Days  159,708,333.3
+Weeks  22,815,476.2
+Months  5,703,869.0
+Years  475,322.4
+M  475.0
+3833000000
+userus-iMac:myth-math user$ python3 convert.py
+Hours  3,833,000,000.0
+Days  159,708,333.3
+Weeks  22,815,476.2
+Months  5,703,869.0
+Years  475,322.4
+M  475.0
+3833000000
+userus-iMac:myth-math user$ python3 convert.py
+Hours  33,000.0
+Days  1,375.0
+Weeks  196.4
+Months  49.1
+Years  4.1
+M  0.0
+33000
+userus-iMac:myth-math user$ python3 convert.py
+Hours  132,000.0
+Days  5,500.0
+Weeks  785.7
+Months  196.4
+Years  16.4
+M  0.0
+132000
+userus-iMac:myth-math user$ python3 convert.py
+Hours  120,000.0
+Days  5,000.0
+Weeks  714.3
+Months  178.6
+Years  14.9
+M  0.0
+120000
+userus-iMac:myth-math user$ python3 convert.py
+Hours  90,000.0
+Days  3,750.0
+Weeks  535.7
+Months  133.9
+Years  11.2
+M  0.0
+90000
+userus-iMac:myth-math user$ python3 convert.py
+Hours  99,000.0
+Days  4,125.0
+Weeks  589.3
+Months  147.3
+Years  12.3
+M  0.0
+99000
+userus-iMac:myth-math user$ python3 convert.py
+Hours  36,036.0
+Days  1,501.5
+Weeks  214.5
+Months  53.6
+Years  4.5
+M  0.0
+36036
+userus-iMac:myth-math user$ python3 convert.py
+Hours  7,280.0
+Days  303.3
+Weeks  43.3
+Months  10.8
+Years  0.9
+M  0.0
+7280
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 25,317,568
+hours per: 33
+52 weeks / One year..
+1716 hours per year per worker
+7020 hours off
+ % 19.64
+hourly $:  33
+annual $:  56,628
+weekly $:  1,089
+
+Workers:  447
+annual $:  25,312,716
+rem $:  4,852
+rem $:  4852.00
+Hours per year Total:  767,052
+Converting for context...
+Hours  767,052.0
+Days  31,960.5
+Weeks  4,565.8
+Months  1,141.4
+Years  95.1
+M  0.0
+Years:  95.12
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 2,531,758
+hours per: 33
+52 weeks / One year..
+1716 hours per year per worker
+7020 hours off
+ % 19.64
+hourly $:  33
+annual $:  56,628
+weekly $:  1,089
+
+Workers:  44
+annual $:  2,491,632
+rem $:  40,126
+rem $:  40126.00
+Hours per year Total:  75,504
+Converting for context...
+Hours  75,504.0
+Days  3,146.0
+Weeks  449.4
+Months  112.4
+Years  9.4
+M  0.0
+Years:  9.36
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 2,031,758
+hours per: 33
+52 weeks / One year..
+1716 hours per year per worker
+7020 hours off
+ % 19.64
+hourly $:  33
+annual $:  56,628
+weekly $:  1,089
+
+Workers:  35
+annual $:  1,981,980
+rem $:  49,778
+rem $:  49778.00
+Hours per year Total:  60,060
+Converting for context...
+Hours  60,060.0
+Days  2,502.5
+Weeks  357.5
+Months  89.4
+Years  7.4
+M  0.0
+Years:  7.45
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 27,031,758
+hours per: 33
+52 weeks / One year..
+1716 hours per year per worker
+7020 hours off
+ % 19.64
+hourly $:  33
+annual $:  56,628
+weekly $:  1,089
+
+Workers:  477
+annual $:  27,011,556
+rem $:  20,202
+rem $:  20202.00
+Hours per year Total:  818,532
+Converting for context...
+Hours  818,532.0
+Days  34,105.5
+Weeks  4,872.2
+Months  1,218.1
+Years  101.5
+M  0.0
+Years:  101.50
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 277,031,758
+hours per: 33
+52 weeks / One year..
+1716 hours per year per worker
+7020 hours off
+ % 19.64
+hourly $:  33
+annual $:  56,628
+weekly $:  1,089
+
+Workers:  4,892
+annual $:  277,024,176
+rem $:  7,582
+rem $:  7582.00
+Hours per year Total:  8,394,672
+Converting for context...
+Hours  8,394,672.0
+Days  349,778.0
+Weeks  49,968.3
+Months  12,492.1
+Years  1,041.0
+M  1.0
+Years:  1,041.01
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 277,031,758
+hours per: 33
+52 weeks / One year..
+1716 hours per year per worker
+7020 hours off
+ % 19.64
+hourly $:  88
+annual $:  151,008
+weekly $:  2,904
+
+Workers:  1,834
+annual $:  276,948,672
+rem $:  83,086
+rem $:  83086.00
+Hours per year Total:  3,147,144
+Converting for context...
+Hours  3,147,144.0
+Days  131,131.0
+Weeks  18,733.0
+Months  4,683.2
+Years  390.3
+M  0.0
+Years:  390.27
+userus-iMac:myth-math user$ clear
+
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 5,000,000
+hours per: 33
+52 weeks / One year..
+1716 hours per year per worker
+7020 hours off
+ % 19.64
+hourly $:  88
+annual $:  151,008
+weekly $:  2,904
+
+Workers:  33
+annual $:  4,983,264
+rem $:  16,736
+rem $:  16736.00
+Hours per year Total:  56,628
+Converting for context...
+Hours  56,628.0
+Days  2,359.5
+Weeks  337.1
+Months  84.3
+Years  7.0
+M  0.0
+Years:  7.02
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 1,000,000
+hours per: 33
+52 weeks / One year..
+1716 hours per year per worker
+7020 hours off
+ % 19.64
+hourly $:  88
+annual $:  151,008
+weekly $:  2,904
+
+Workers:  6
+annual $:  906,048
+rem $:  93,952
+rem $:  93952.00
+Hours per year Total:  10,296
+Converting for context...
+Hours  10,296.0
+Days  429.0
+Weeks  61.3
+Months  15.3
+Years  1.3
+M  0.0
+Years:  1.28
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 93,952
+hours per: 33
+52 weeks / One year..
+1716 hours per year per worker
+7020 hours off
+ % 19.64
+hourly $:  88
+annual $:  151,008
+weekly $:  2,904
+
+Workers:  0
+annual $:  0
+rem $:  93,952
+rem $:  93952.00
+Hours per year Total:  0
+Converting for context...
+Hours  0.0
+Days  0.0
+Weeks  0.0
+Months  0.0
+Years  0.0
+M  0.0
+Years:  0.00
+userus-iMac:myth-math user$ python3 manmyth.py 
+$$$ 93,952
+hours per: 33
+52 weeks / One year..
+1716 hours per year per worker
+7020 hours off
+ % 19.64
+hourly $:  11
+annual $:  18,876
+weekly $:  363
+
+Workers:  4
+annual $:  75,504
+rem $:  18,448
+rem $:  18448.00
+Hours per year Total:  6,864
+Converting for context...
+Hours  6,864.0
+Days  286.0
+Weeks  40.9
+Months  10.2
+Years  0.9
+M  0.0
+Years:  0.85
+userus-iMac:myth-math user$ python3 convert.py 
+Traceback (most recent call last):
+  File "convert.py", line 103, in <module>
+    m = convert()
+TypeError: __init__() missing 1 required positional argument: 'v'
+userus-iMac:myth-math user$ clear
+
+userus-iMac:myth-math user$ python3 convert.py 
+Traceback (most recent call last):
+  File "convert.py", line 103, in <module>
+    m = convert()
+TypeError: __init__() missing 1 required positional argument: 'v'
+userus-iMac:myth-math user$ python3 convert.py 
+  File "convert.py", line 30
+    if v ! = 0: self.val = v
+         ^
+SyntaxError: invalid syntax
+userus-iMac:myth-math user$ python3 convert.py 
+Input test. . . 
+Traceback (most recent call last):
+  File "convert.py", line 102, in <module>
+    m.testStrings()
+  File "convert.py", line 36, in testStrings
+    v = getInput()
+NameError: name 'getInput' is not defined
+userus-iMac:myth-math user$ python3 convert.py 
+Input test. . . 
+blah
+userus-iMac:myth-math user$ python3 convert.py 
+Input test. . . 
+Traceback (most recent call last):
+  File "convert.py", line 103, in <module>
+    m.testStrings()
+  File "convert.py", line 36, in testStrings
+    v = readInput()
+NameError: name 'readInput' is not defined
+userus-iMac:myth-math user$ python3 convert.py 
+Input test. . . 
+Traceback (most recent call last):
+  File "convert.py", line 103, in <module>
+    m.testStrings()
+  File "convert.py", line 46, in testStrings
+    v = readInput()
+NameError: name 'readInput' is not defined
+userus-iMac:myth-math user$ python3 convert.py 
+Input test. . . 
+Input test. . . 
+blah
+blah
+userus-iMac:myth-math user$ python3 convert.py 
+. . . --->AcMe rockits<<---. . . 
+Input test. . . 
+lol
+lol
+userus-iMac:myth-math user$ python3 convert.py 
+  File "convert.py", line 41
+    print ("  " ,i++,   "{:,.1f}".format( self.htoYears()) )
+                    ^
+SyntaxError: invalid syntax
+userus-iMac:myth-math user$ python3 convert.py 
+. . . --->AcMe rock.its<<---. . . 
+reading Input . . . 
+blah blah blahhh
+   0 198.4
+   1 198.4
+   2 198.4
+blah blah blahhh
+userus-iMac:myth-math user$ python3 convert.py 
+. . . --->AcMe rock.its<<---. . . 
+reading Input . . . 
+ok let go
+   0 ok
+   1 let
+   2 go
+ok let go
+userus-iMac:myth-math user$ python3 convert.py 
+. . . --->AcMe rock.its<<---. . . 
+reading Input . . . 
+lets go go go go okkkk
+   0 lets
+   1 go
+   2 go
+   3 go
+   4 go
+   5 okkkk
+lets go go go go okkkk
+userus-iMac:myth-math user$ clear
+
+userus-iMac:myth-math user$ clear
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+userus-iMac:myth-math user$ python3 convert.py 
+. . . --->AcMe rock.its<<---. . . 
+reading Input . . . 
+what to do with this with out goingg
+   0 what
+   1 to
+   2 do
+   3 with
+   4 this
+   5 with
+   6 out
+   7 goingg
+what to do with this with out goingg
+userus-iMac:myth-math user$ python3 convert.py 
+. . . --->AcMe rock.its<<---. . . 
+reading Input . . . 
+1 2 345 55
+   0 1
+   1 2
+   2 345
+   3 55
+1 2 345 55
+userus-iMac:myth-math user$ python3 convert.py 
+. . . --->AcMe rock.its<<---. . . 
+reading Input . . . 
+99 99 99999 990 000 123
+   0 99
+   1 99
+   2 99999
+   3 990
+   4 000
+   5 123
+99 99 99999 990 000 123
+userus-iMac:myth-math user$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
