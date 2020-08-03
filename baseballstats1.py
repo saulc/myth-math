@@ -31,9 +31,69 @@ class season:
         self.seasons = (seasonNum,  avg)
 
 
+''' ================================================
+
+ +++++++++++++++++++++++++++++++++++++++++++++  '''
+#
+class pitch:
+    # details for pitcher selection/ballpen. . .
+    switch = false
+    side = right
+    style = non
+
+    name = 'one'
+    speed = 99
+    zone = 5
+    # a b c d e
+    # p 1 2 3 f
+    # o 4 5 6 g
+    # n 7 8 9 h
+    # m l k j i
+    #
+
+class pitcher:
+
+    pitches = 0
+    batters = 0
+    strikes = 0
+    swings = 0
+    ball = 0
+    bswings = 0
+    foul = 0
+    foultp = 0
+    hit = 0
+    bunt = 0
+
+
+
+
 class hitting:
     seasonAvgerage = 0
     seasons = [ ]
+
+    
+
+    feildPos = 0
+    # inf,  outf, pitch,  catch,  hit,  speed,
+    # 123 678,  9,  545,
+    atBat = 0
+    strikes = 0
+    ball = 0
+    foul = 0
+    foultp = 0
+    pitches = 0
+    hit = 0
+    bunt = 0
+    rib = 0
+    era = 0
+    hitAvg = 0
+    swingxx = 0
+    stance = 0
+    switch = false
+
+
+
+
 
     def __init__(self,  avg,  seasonNum):
         self.seasonAvgerage = Avg
@@ -46,6 +106,16 @@ class feild:
     def __init__(self,  avg,  seasonNum):
         self.seasonAvgerage = Avg
         self.seasons = (seasonNum,  avg)
+
+
+''' ================================================
+
+ +++++++++++++++++++++++++++++++++++++++++++++  '''
+
+
+ ''' ================================================
+
+  +++++++++++++++++++++++++++++++++++++++++++++  '''
 
 
 
@@ -62,7 +132,7 @@ class Stats(Item):
 
     dpower = 10
 
-    def __init__(self, swidth, sheight, score=2220, level=11, lives=44, power= 110):
+    def __init__(self, swidth, sheight, score=1000, leagues=11):
         super().__init__(0, 0)
         self.height = sheight
         self.width = swidth
@@ -73,22 +143,22 @@ class Stats(Item):
         self.crash = 0
         self.powerUps = 0
         self.power = power
-        self.level = level
-        self.lives = lives
-        self.wZero = 1000
-        self.wOne = 100
-        self.wTwo = 10
+        self.Seasons = level
+        self.Leagues = leagues
+        self.wZero = 1000  #main skill
+        self.wOne = 100     #strength //major
+        self.wTwo = 10      #weak   //minor
         self.ws = [ self.wZero, self.wOne, self.wTwo]
 
     def getStatsString(self):
-        return 'Score: {0} | Lives: {1} | Level: {2} | Shield: {3}'.format(self.score, self.lives, self.level, self.power)
+        return 'Score: {0} | Seasons: {1} | Leagues: {2} | Shield: {3}'.format(self.score, self.lives, self.level, self.power)
 
     def getFullStats(self):
         items = []
         items.append( myPair('Game Stats', ''))
         items.append( myPair('Score', self.score) )
-        items.append( myPair('Level', self.level) )
-        items.append( myPair('Lives', self.lives) )
+        items.append( myPair('Seasons', self.level) )
+        items.append( myPair('Leagues', self.leagues) )
         items.append( myPair('Shield', self.power) )
         items.append( myPair('Shots', self.shots) )
         items.append( myPair('Hits', self.hits) )
