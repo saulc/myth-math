@@ -3,7 +3,7 @@
 
 
 # config file format
-
+import random
 
 def openFile():
     file = open("test.txt", 'r')
@@ -18,14 +18,49 @@ def readInput():
     file = open("test.txt", 'r')
     s = str(file.read())
     words = s.split(" ");
-    print("Expected Output: " + testout)
+    # print("Expected Output: " + testout)
     for w in words:
         if w == '\n': words.remove(w)
     print(words)
-    makeChains(words)
+    testWords(words,  True)
+    # makeChains(words)
 
 
-def makeChains(words):
+def testWords(words, showChecks=False):
+    if showChecks:  print(" testing chatbot  ")
+    for w in words:
+        print( w )
+    sen = []
+    for i in range(0, len(words) ):
+        sen. append( words[i])
+        for j in range(0, len(words) ):
+            sen. append( words[j]+" "+ words[i])
+            # showlist(w,  True)
+            # print(i,  " : ", words[i])
+            # print(" ", words[j],  words[i])
+    if showChecks:
+        print(sen )  #raw data
+        st = listtoString(sen,  " ") #data only
+    print(st)   #show it
+
+# list to string with sep 'char'
+def listtoString(   lst, sep):
+    s = ""
+    for c in lst: s += str(c) + sep
+    return s
+
+
+# string to list, count
+def showlist(  li, showChecks=False):
+    w = li.split(" ");
+    print(w)
+    i = 0
+    for s in li:
+        i +=1
+        if showChecks:  print(i,  ":  ",  s)
+    return w, i
+
+def makeChains(words, showChecks=False):
     chain = []
     wordcheck = []
     for i in range(0, len(words) ):
@@ -35,15 +70,15 @@ def makeChains(words):
 
 
     for i in range(0, len(words) ):
-        print(str(i) + " - " + words[i] )
+        if showChecks:  print(str(i) + " - " + words[i] )
         aword = words[i]
         for j in range(i+1, len(words) ):
             #check the rest of the words for matching links
             bword = words[j]
-            print("   " + str(j) + " ~ " + bword )
+            if showChecks:  print("   " + str(j) + " ~ " + bword )
             if wordcheck[j][0] == False and wordcheck[j][1] == False:
                 temp = checkLinks(aword, bword)
-                print("Check state: " + str(temp) )
+                if showChecks:  print("Check state: " + str(temp) )
                 if temp == 1:   #word have not been swapped
                     wordcheck[i][0] = True
                     wordcheck[j][1] = True
@@ -57,11 +92,11 @@ def makeChains(words):
                     chain.append(aword)
 
     print(chain)
-    k = 0
-    for i in  wordcheck:
-        print("word check: " + str(i) + " = "+  words[k] )
-
-        k+= 1
+    # k = 0
+    # for i in  wordcheck:
+    #     print("word check: " + str(i) + " = "+  words[k] )
+    #
+    #     k+= 1
 
 # compare words, return 0 for no match,
 # 1 if end of a == start of b

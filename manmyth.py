@@ -113,13 +113,13 @@ if __name__ == '__main__':
 
     # m = myth()
     # m.demo()
-
+    # 1 year == 8760
     rc = ReadConfig()
     args = rc. readInput("Enter a value( $ ) to analyze time divisions:")
     t = args
     print("Value input: " + t)
     tt = int(t)
-    m = myth(tt) 
+    m = myth(tt)
     m.demo()
 
 

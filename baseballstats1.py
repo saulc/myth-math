@@ -86,6 +86,7 @@ class hit:
     thisHit = {
     'pitch' :  'blah' ,
     'game' :  'blah' ,
+    'location' :  'blahblah' ,
     'misc' :  'blah'         }
 
     def printInfo(self):
@@ -244,6 +245,3 @@ class Stats( ):
 if __name__ == '__main__':
     h = hit()
     h.printInfo()
-
-
-    
