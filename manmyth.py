@@ -35,7 +35,11 @@ class myth():
     def getWorker(self): return self.workers
     def setWorker(self, w): self.workers = w
 
-
+    def compountInterest(self,  p, r,  n, t):
+        p = (1 + r/n)^nt
+        return p
+    ## TODO: recursion refresh
+    # find/redo fractional/decimal calc. add fractional powers/exp
     def exponets(self, b, a):
             tt = 2
             tm = 0

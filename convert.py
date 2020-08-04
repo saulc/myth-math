@@ -3,14 +3,28 @@ Created on Feb 13, 2016
 
 @author: saul
 '''
-
-
+from ReadConfig import ReadConfig
 
 
 class convert():
 
     val =  1600000
     '''
+
+ # ====================== +++++++++++++++++++++
+  # ====================== +++++++++++++++++++++
+   # ====================== +++++++++++++++++++++
+    working:  hours to month/year/day
+    date ms to am/pm/ dwy
+
+    //intermediate convertion strings not ready
+
+    needs converting:
+    why no ?  in python?  ^_-
+    do this in c-+- ? ? ?
+     # ====================== +++++++++++++++++++++
+      # ====================== +++++++++++++++++++++
+       # ====================== +++++++++++++++++++++
     private String secToString(long td){
         //format secs to display time nicely.
         long second = (td ) % 60
@@ -27,32 +41,31 @@ class convert():
     }
                 print ("  " ,  "{:,.2f}".format( self.htoYears()) )
 '''
+
+    mparse = 0
+    rc = 0
+
     def __init__(self, v=0):
         if v == 0: pass
         else:  self.val = v
+        # self.rc = ReadConfig("testing... 1 2 3")
+        # self.mparse = self.rc.getCommandArgs(False)
+        # print(self.mparse)
+        # print(" read initial arguments done, if any.")
 
 
-    def readInput(self):
-        print("reading Input . . . ")
-        v = input()
-        words = v. split(' ')
-        i = 0
-        for w in words:
-            # split and process input for chainable operators
-            print ("  " ,i, w) 
-            i+=1
-        return str(v)
-
-
-    def getParams(self):
-        readInput()
-
-
-    def testStrings(self):
+    def getCommandArgs(self):
+        print("Getting inital arguments .")
+ # ====================== +++++++++++++++++++++
+   # ====================== +++++++++++++++++++++
+    def testStrings(self, inargs, msg):
         print(". . . --->AcMe rock.its<<---. . . ")
-        v = self.readInput()
+        print(" " + msg)
+        v = inargs.readInput()
         print(v)
 
+ # ====================== +++++++++++++++++++++
+   # ====================== +++++++++++++++++++++
     def getVal(self):
         return self.val
 
@@ -89,9 +102,16 @@ class convert():
         day = (td / ( 60 * 60 * 24) )
         return day
 
+ # ====================== +++++++++++++++++++++
+  # ====================== +++++++++++++++++++++
+   # ====================== +++++++++++++++++++++
+
+
     def secToDay(self, s):
         return self.hrtoDay(self.mintoHr(self.sectoMin(s)))
 
+ # split to switch on input operators h d w m y Me Cen Dec eon = 100kyr? 1m?
+ # operation string fifo display
     def demo(self):
         print ("Hours " , "{:,.1f}".format( self.getVal()) )
         print ("Days " ,  "{:,.1f}".format(self.htoDays()) )
@@ -106,5 +126,8 @@ if __name__ == '__main__':
     # # m.setVal(t)
     # m.demo()
     # print( str(t) )
+    rc = ReadConfig()
+    args = rc. readInput()
     m = convert()
-    m.testStrings()
+    m.testStrings(rc, "anything else?  ...")
+    # m.getCommandArgs

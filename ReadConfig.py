@@ -12,7 +12,11 @@
 import argparse
 import sys
 
-class ReadConfig:
+class ReadConfig():
+    val = "" #store the data/args to be parsed
+    def __init__(self, v="No data"):
+        if v == "": pass
+        else:  self.val = v
 
     def openFile():
         file = open("test.txt", 'r')
@@ -59,7 +63,7 @@ class ReadConfig:
 
 
 
-    def getCommandArgs(self):
+    def getCommandArgs(self,  printInfo = True):
         try:
             parser = argparse.ArgumentParser()
             args = parser.parse_args()
@@ -109,11 +113,11 @@ class ReadConfig:
             # split and process input for chainable operators
             print ("  " ,i, w)
             i+=1
-        return str(v)
+        return str( v )
 
 
-    def getParams(self):
-        readInput()
+    # def getParams(self):
+    #     readInput()
 
 
     def test():
@@ -127,4 +131,5 @@ class ReadConfig:
 if __name__ == '__main__':
     # config = openFile()
     # //f = printFile(config)
-    readInput()
+    rc = ReadConfig()
+    rc. readInput()

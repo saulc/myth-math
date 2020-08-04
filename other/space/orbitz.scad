@@ -69,7 +69,7 @@ avj = angularV(dj, 4300);
 
 
 
-see = 1111;
+see = 1111; //scale planets/stars to see them...
 
 color("grey")
 planet(earth*see/2, ds, avs, 11);
@@ -91,8 +91,8 @@ planet(mer*see, dme, avmer, 0);
 color("orange")
 planet(venus*see, dv, avv, 0);
 
-//color("yellow")
-//planet(jupiter*see/10, dj, avj, 0);
+color("yellow")
+planet(jupiter*see/10, dj, avj, 0);
 
 
 color("blue") cy(see*111111, 1, fn);
@@ -108,7 +108,7 @@ color("blue") cy(see*111111, 1, fn);
 
 
 
-
+//scale the ship more, its tiny...but huge?
 ee = 111111;
 vv = 111;
 

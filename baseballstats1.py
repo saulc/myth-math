@@ -6,7 +6,7 @@ Created on 8/3/20
 stats class to keep track of game values for each player
 future version may be linked to a user item to hold stats for mutiple players
 
-i don't like basebaall. . .
+i don't like basebaall. . but i know most of the rules. . .
 
 
 '''
@@ -37,9 +37,9 @@ class season:
 #
 class pitch:
     # details for pitcher selection/ballpen. . .
-    switch = false
-    side = right
-    style = non
+    switch = False
+    side = 1  # 0 switch 1 right 2 left
+    style = 0
 
     name = 'one'
     speed = 101
@@ -76,6 +76,21 @@ class pitcher:
     bunt = 0
 
 
+class hit:
+    print("reading Input . . . ")
+    # thisdict = {
+    #   "brand": "Ford",
+    #   "model": "Mustang",
+    #   "year": 1964
+    # }
+    thisHit = {
+    'pitch' :  'blah' ,
+    'game' :  'blah' ,
+    'misc' :  'blah'         }
+
+    def printInfo(self):
+        print(self.thisHit)
+
 
 # at bat.
 class hitting:
@@ -100,15 +115,13 @@ class hitting:
     hitAvg = 0
     swingxx = 0
     stance = 0
-    switch = false
-
-
-
-
+    switch = False
 
     def __init__(self,  avg,  seasonNum):
         self.seasonAvgerage = Avg
         self.seasons = (seasonNum,  avg)
+
+
 # skill, agressiveness, speed, # XX:
 class feild:
     seasonAvgerage = 0
@@ -119,27 +132,27 @@ class feild:
         self.seasons = (seasonNum,  avg)
 
 
-''' ================================================
+        ''' ================================================
 
- +++++++++++++++++++++++++++++++++++++++++++++  '''
-
-
- ''' ================================================
-
-  +++++++++++++++++++++++++++++++++++++++++++++  '''
+        +++++++++++++++++++++++++++++++++++++++++++++  '''
 
 
+        ''' ================================================
 
-class Stats(Item):
+        +++++++++++++++++++++++++++++++++++++++++++++  '''
 
-    black = pygame.Color(0, 0, 0)
-    white = pygame.Color(255, 255, 255)
-    green = pygame.Color(0,255,0)
-    blue = pygame.Color(0, 0,255)
-    red = pygame.Color(255,0, 0)
-    orange = pygame.Color(200,0, 100)
 
-    colors = [red, orange, green, blue]
+
+class Stats( ):
+
+    # black = pygame.Color(0, 0, 0)
+    # white = pygame.Color(255, 255, 255)
+    # green = pygame.Color(0,255,0)
+    # blue = pygame.Color(0, 0,255)
+    # red = pygame.Color(255,0, 0)
+    # orange = pygame.Color(200,0, 100)
+    #
+    # colors = [red, orange, green, blue]
 
     dpower = 10
 
@@ -225,3 +238,12 @@ class Stats(Item):
 
     def getScore(self):
         return self.score
+
+
+
+if __name__ == '__main__':
+    h = hit()
+    h.printInfo()
+
+
+    

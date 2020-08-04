@@ -16,7 +16,7 @@ class leds:
             for n in c:
                 if i == n:
                     temp += '~'
-                else: temp +='.-'
+                else: temp +='.'
         print(temp)
 
 
