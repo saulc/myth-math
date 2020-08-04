@@ -54,8 +54,11 @@ class convert():
         # print(" read initial arguments done, if any.")
 
 
-    def getCommandArgs(self):
+    def checkCommandArgs(self, inargs):
         print("Getting inital arguments .")
+        v = inargs.getCommandArgs(True)
+        print("returned args: " )
+        print(v)
  # ====================== +++++++++++++++++++++
    # ====================== +++++++++++++++++++++
     def testStrings(self, inargs, msg):
@@ -63,6 +66,7 @@ class convert():
         print(" " + msg)
         v = inargs.readInput()
         print(v)
+        self.checkCommandArgs(inargs)
 
  # ====================== +++++++++++++++++++++
    # ====================== +++++++++++++++++++++
@@ -98,10 +102,20 @@ class convert():
         hour = (m / ( 60 * 60)) % 24
         return hour
 
-    def hrtoDay(self, td):
-        day = (td / ( 60 * 60 * 24) )
+    def hrtoDay(self):
+        day = (self.val / ( 60 * 60 * 24) )
         return day
 
+    def hrtoMin(self):
+        min = (self.val  * 60  )
+        return min
+
+    def hrtoSec(self):
+        min = (self.val  * 60 *60 )
+        return min
+
+    # def hrtoMs(self):
+    #     self.hrtoSec()
  # ====================== +++++++++++++++++++++
   # ====================== +++++++++++++++++++++
    # ====================== +++++++++++++++++++++
@@ -110,9 +124,17 @@ class convert():
     def secToDay(self, s):
         return self.hrtoDay(self.mintoHr(self.sectoMin(s)))
 
+    def demoHr2ms(self):
+        print ("Hours   :" , "{:,.1f}".format( self.getVal()) )
+        print ("minutes : " , "{:,.1f}".format( self.hrtoMin()) )
+        print ("seconds : " , "{:,.1f}".format( self.hrtoSec()) )
+        # print ("micros  : " , "{:,.2f}".format( self.hrtoMs()) )
+        #
+        # print ("nanos : " , "{:,.1f}".format( self.hrtoNs()) )
+
  # split to switch on input operators h d w m y Me Cen Dec eon = 100kyr? 1m?
  # operation string fifo display
-    def demo(self):
+    def demoHr2yrs(self):
         print ("Hours " , "{:,.1f}".format( self.getVal()) )
         print ("Days " ,  "{:,.1f}".format(self.htoDays()) )
         print ("Weeks " , "{:,.1f}".format(self.htoWeeks()) )
@@ -127,7 +149,12 @@ if __name__ == '__main__':
     # m.demo()
     # print( str(t) )
     rc = ReadConfig()
-    args = rc. readInput()
-    m = convert()
-    m.testStrings(rc, "anything else?  ...")
+    args = rc. readInput("Enter a value(hours) to Convert:")
+    t = args
+    print("Value input: " + t)
+    m = convert(int(t))
+    m.demoHr2yrs()
+    m.demoHr2ms()
+    # m.testStrings(rc, "anything else?  ...")
+
     # m.getCommandArgs

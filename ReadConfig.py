@@ -64,26 +64,27 @@ class ReadConfig():
 
 
     def getCommandArgs(self,  printInfo = True):
-        try:
+        # try:
+            print("Command arg check starting. . .")
             parser = argparse.ArgumentParser()
             args = parser.parse_args()
-            print (sys.argv)
+            # print (sys.argv)
             i = 0
-            for w in words:
-                # split and process input for chainable operators
-                print ("  " ,i, w)
-                i+=1
-            return str(v)
+            # for w in words:
+            #     # split and process input for chainable operators
+            #     print ("  " ,i, w)
+            #     i+=1
+            # return str(v)
             for a in args:
-                print ("  " ,i, a)
+                print (i, "  " , a)
                 # print (sys.argv[1])
                 return 0
-        except:
-            print("__sys_Message: ")
-            e = sys.exc_info()[0]
-            print(e)
-        else: print("Command arg check done with else?")
-        print("Command arg check done.")
+        # except:
+        #     print("__sys_Message: ")
+        #     e = sys.exc_info()[0]
+        #     print(e)
+        # else: print("Command arg check done with else?")
+            print("Command arg check done.")
 
     # ====================== +++++++++++++++++++++
     def addCommandArgExample(self):
@@ -103,9 +104,10 @@ class ReadConfig():
     # ====================== +++++++++++++++++++++
     # ====================== +++++++++++++++++++++
     # ====================== +++++++++++++++++++++
-    def readInput(self):
-        print("reading Input . . . ")
-        print(" careful what you ask . . . ")
+    def readInput(self,  shomesg):
+        print( shomesg )
+         # print("reading Input . . . ")
+        # print(" careful what you ask . . . ")
         v = input()
         words = v. split(' ')
         i = 0
