@@ -109,12 +109,12 @@ class ReadConfig():
          # print("reading Input . . . ")
         # print(" careful what you ask . . . ")
         v = input()
-        words = v. split(' ')
-        i = 0
-        for w in words:
-            # split and process input for chainable operators
-            print ("  " ,i, w)
-            i+=1
+        # words = v. split(' ')
+        # i = 0
+        # for w in words:
+        #     # split and process input for chainable operators
+        #     print ("  " ,i, w)
+        #     i+=1
         return str( v )
 
 

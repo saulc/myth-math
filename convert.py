@@ -114,8 +114,11 @@ class convert():
         min = (self.val  * 60 *60 )
         return min
 
-    # def hrtoMs(self):
-    #     self.hrtoSec()
+    def hrtoMs(self):
+        return 1000* self.hrtoSec()
+
+    def hrtoNs(self):
+        return 1000*1000* self.hrtoSec()
  # ====================== +++++++++++++++++++++
   # ====================== +++++++++++++++++++++
    # ====================== +++++++++++++++++++++
@@ -128,9 +131,8 @@ class convert():
         print ("Hours   :" , "{:,.1f}".format( self.getVal()) )
         print ("minutes : " , "{:,.1f}".format( self.hrtoMin()) )
         print ("seconds : " , "{:,.1f}".format( self.hrtoSec()) )
-        # print ("micros  : " , "{:,.2f}".format( self.hrtoMs()) )
-        #
-        # print ("nanos : " , "{:,.1f}".format( self.hrtoNs()) )
+        print ("micros  : " , "{:,.2f}".format( self.hrtoMs()) )
+        print ("nanos   : " , "{:,.0f}".format( self.hrtoNs()) )
 
  # split to switch on input operators h d w m y Me Cen Dec eon = 100kyr? 1m?
  # operation string fifo display
@@ -138,9 +140,19 @@ class convert():
         print ("Hours " , "{:,.1f}".format( self.getVal()) )
         print ("Days " ,  "{:,.1f}".format(self.htoDays()) )
         print ("Weeks " , "{:,.1f}".format(self.htoWeeks()) )
-        print ("Months " , "{:,.1f}".format( self.htoMonths()) )
-        print ("Years " , "{:,.1f}".format( self.htoYears()) )
+        print ("Months " , "{:,.2f}".format( self.htoMonths()) )
+        print ("Years " , "{:,.3f}".format( self.htoYears()) )
         print ("M " , "{:,.1f}".format( self.htoYears()//1000 ) )
+
+    def demo(self):
+        m = self
+        if self.val > 10:
+            m.demoHr2yrs()
+            m.demoHr2ms()
+        else:
+            m.demoHr2ms()
+            m.demoHr2yrs()
+
 
 if __name__ == '__main__':
     # t = 20*7*52 #*1000
@@ -152,9 +164,9 @@ if __name__ == '__main__':
     args = rc. readInput("Enter a value(hours) to Convert:")
     t = args
     print("Value input: " + t)
-    m = convert(int(t))
-    m.demoHr2yrs()
-    m.demoHr2ms()
+    tt = int(t)
+    m = convert(tt)
+    m.demo()
     # m.testStrings(rc, "anything else?  ...")
 
     # m.getCommandArgs

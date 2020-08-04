@@ -8,22 +8,25 @@ from 'The mythical man month'
 '''
 from convert import convert
 
+from ReadConfig import ReadConfig
 
 class myth():
 
     conv = 7250
     workers = 10*1000000
     hoursper =  33 #40 # 12*6
-    amount = 93952 #1000*1000
+    amount =  1000*1000
     # amount = 277031758 # *10000000*1000
     # 200 quadrillion = 15m x 12.82 billion global basic income?
     # us/ 15k x 320m. 4t per year...
     #us gdp 2020-1 = 20 trillion.
     #1mill x 1mill = 1 trillion.
     #1 million base. 10x 1000x get interesting....
-    hourly =  11  # lol more like 11....ish...
+    hourly =  33 #11  # lol more like 11....ish...
 
-    def __init__(self):
+    def __init__(self,  cv=0):
+        if cv == 0:  self. amount = 1000*1000
+        else:  self. amount = cv
         self.conv = convert(self.conv)
 
     def setVal(self, v):
@@ -62,11 +65,11 @@ class myth():
         print('52 weeks / One year..')
         print(str(hrperyear) + " hours per year per worker")
         print(str(offhr) + " hours off")
-        print(" %" ,  "{:.2f}".format(100*hrperyear/yrhr) )
-        print('hourly $: ' , str(self.hourly) )
+        print(str(yrhr) + " hours-> year")
+        print(  "  {:.2f}".format(100*hrperyear/yrhr), "% time working billed. "  )
         print('annual $: ' , "{:,}".format(hrperyear*self.hourly) )
-
         print('weekly $: ' , "{:,}".format(self.hoursper * self.hourly) )
+        print('hourly $: ' , str(self.hourly) )
         print()
         print("Workers: " ,"{:,}".format( self.workers) )
         print('annual $: ' , "{:,}".format(self.hourly*self.conv.getVal() ) )
@@ -107,8 +110,18 @@ if __name__ == '__main__':
     # # cv.setVal()
     # cv.demo()
     # print("----")
-    m = myth()
+
+    # m = myth()
+    # m.demo()
+
+    rc = ReadConfig()
+    args = rc. readInput("Enter a value( $ ) to analyze time divisions:")
+    t = args
+    print("Value input: " + t)
+    tt = int(t)
+    m = myth(tt) 
     m.demo()
+
 
 
 
