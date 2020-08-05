@@ -3,7 +3,7 @@
 
 
 # config file format
-import random
+import random 
 
 def openFile():
     file = open("test.txt", 'r')
@@ -22,9 +22,26 @@ def readInput():
     for w in words:
         if w == '\n': words.remove(w)
     print(words)
-    testWords(words,  True)
+    testWords(words,  False)
     # makeChains(words)
 
+def reduceRepeats(inputstr,  showChecks=False):
+    print(" testing repeat filter start.___ ")
+    ret = []
+    # words, i = showlist(inputstr,  False)
+    w = inputstr.split(" ");
+    print(w)
+    i = 0
+    for s in w:
+        i +=1
+        if showChecks:  print(i,  ":  ",  s)
+        if s not in ret:  ret. append(s)
+    print(i,  " elements checked,  ",  len(ret) ,  " unique words found. ? ")
+    # showlist(ret,  False)
+    for w in ret:
+        print(" . . ",  w)
+    print(" testing repeat filter end.___ ")
+    return ret
 
 def testWords(words, showChecks=False):
     if showChecks:  print(" testing chatbot  ")
@@ -35,13 +52,21 @@ def testWords(words, showChecks=False):
         sen. append( words[i])
         for j in range(0, len(words) ):
             sen. append( words[j]+" "+ words[i])
+            if j % 3 == 0:  sen. append("   ")
+
             # showlist(w,  True)
             # print(i,  " : ", words[i])
             # print(" ", words[j],  words[i])
+
     if showChecks:
         print(sen )  #raw data
-        st = listtoString(sen,  " ") #data only
+    st = listtoString(sen,  " ") #data only
     print(st)   #show it
+    ft = reduceRepeats(sen[0], False)
+    print(ft)
+    if showChecks:
+        print(len(words),  " words found")
+        print(len(sen),  " phrases found")
 
 # list to string with sep 'char'
 def listtoString(   lst, sep):

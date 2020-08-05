@@ -43,8 +43,8 @@ class ReadConfig():
         file = open("testc.txt", 'r')
         s = str(file.read())
         # s = m
-        words,  n = self. showlist(s)
-        print(n ,  " chars found. ")
+        words,  i = self. showlist(s)
+        print(i ,  " chars found... ")
         self. checkRules(words, sep, False)
         return m
 
