@@ -5,7 +5,7 @@ from math import pi, cos, sin, tan
 #test program to visulaize led sequences.
 
 class leds:
-    num = 136
+    num = 16
     mindelay = 3
     modedelay = 333
 
@@ -15,8 +15,8 @@ class leds:
         for i in range(0, self.num):
             for n in c:
                 if i == n:
-                    temp += '~'
-                else: temp +='.'
+                    temp += '+'
+                else: temp +=' '
         print(temp)
 
 
@@ -30,7 +30,7 @@ def rad(deg):
 
 l = leds()
 
-r = 3 * 180
+r = 1 * 180
 mid = l.num//2
 mid = int(mid)
 for i in range(0, r):

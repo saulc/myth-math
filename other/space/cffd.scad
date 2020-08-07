@@ -67,6 +67,7 @@ module jets(){
      for(i=[-1,,1]) translate([bd-2,  i*bd/2, 10]) {
         //turbofans
         # translate([0,0,0])  cy(5, 7, fn);
+        # translate([0,5.5*i,0])  cy(5, 7, fn);
 //        # translate([-3,fl/2,0])  cy(3, 7, fn);
      }
 }
@@ -182,7 +183,7 @@ module wg(){
         hull(){
             //            winglets
             translate([0,fl, fhh/2-zz])  cy(1, fhh, fn);
-            translate([7,fl+3, fhh/2-zz*2.3])  cy(1, 1, fn);
+            translate([7*$t,fl+3, fhh/2-zz*2.3])  cy(1, 1, fn);
         }
     }
 }

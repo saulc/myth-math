@@ -137,12 +137,12 @@ class convert():
  # split to switch on input operators h d w m y Me Cen Dec eon = 100kyr? 1m?
  # operation string fifo display
     def demoHr2yrs(self):
-        print ("Hours " , "{:,.1f}".format( self.getVal()) )
-        print ("Days " ,  "{:,.1f}".format(self.htoDays()) )
-        print ("Weeks " , "{:,.1f}".format(self.htoWeeks()) )
+        print ("Hours  " , "{:,.1f}".format( self.getVal()) )
+        print ("Days   " ,  "{:,.1f}".format(self.htoDays()) )
+        print ("Weeks  " , "{:,.1f}".format(self.htoWeeks()) )
         print ("Months " , "{:,.2f}".format( self.htoMonths()) )
-        print ("Years " , "{:,.3f}".format( self.htoYears()) )
-        print ("M " , "{:,.1f}".format( self.htoYears()//1000 ) )
+        print ("Years  " , "{:,.3f}".format( self.htoYears()) )
+        print ("M     " , "{:,.1f}".format( self.htoYears()//1000 ) )
 
     def demo(self):
         m = self

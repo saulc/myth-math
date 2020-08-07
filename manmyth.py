@@ -9,6 +9,7 @@ from 'The mythical man month'
 from convert import convert
 
 from ReadConfig import ReadConfig
+from patternprinter import pp
 
 class myth():
 
@@ -17,12 +18,14 @@ class myth():
     hoursper =  33 #40 # 12*6
     amount =  1000*1000
     # amount = 277031758 # *10000000*1000
+    # amount = 277031758 # *10000000*1000
     # 200 quadrillion = 15m x 12.82 billion global basic income?
     # us/ 15k x 320m. 4t per year...
     #us gdp 2020-1 = 20 trillion.
     #1mill x 1mill = 1 trillion.
     #1 million base. 10x 1000x get interesting....
-    hourly =  808 #11  # lol more like 11....ish...
+    hourly =  111 #11  # lol more like 11....ish...
+    yearx = 1
 
     def __init__(self,  cv=0):
         if cv == 0:  self. amount = 1000*1000
@@ -37,6 +40,10 @@ class myth():
         ## number of workers for set amount of time/amount
     def getWorker(self): return self.workers
     def setWorker(self, w): self.workers = w
+    def getHrRate(self): return self.hourly
+    def setHrRate(self, w): self.hourly = w
+
+    def setyears(self,  y):  self. yearx = y
 
     def compountInterest(self,  p, r,  n, t):
         p = (1 + r/n)^nt
@@ -68,10 +75,15 @@ class myth():
         print(str(yrhr) + " hours-> year")
         print(  "  {:.2f}".format(100*hrperyear/yrhr), "% time working billed. "  )
         print('annual $: ' , "{:,}".format(hrperyear*self.hourly) )
+        print('month $: ' , "{:,}".format(self.hoursper * self.hourly * 4) )
         print('weekly $: ' , "{:,}".format(self.hoursper * self.hourly) )
         print('hourly $: ' , str(self.hourly) )
         print()
-        print("Workers: " ,"{:,}".format( self.workers) )
+
+        print('years #: ' , "{:,}".format(self. yearx) )
+        print('Total $: ' , "{:,}".format(hrperyear*self.hourly*self.yearx) )
+        print('___')
+        print("Workers/parts: " ,"{:,}".format( self.workers) )
         print('annual $: ' , "{:,}".format(self.hourly*self.conv.getVal() ) )
         print('rem $: ' , "{:,}".format(self.amount - hrperyear*self.hourly*self.workers) )
         print('rem $: ' , "{:.2f}".format(self.amount - hrperyear*self.hourly*self.workers) )
@@ -101,6 +113,14 @@ class myth():
             m.exponets(2, 22)
             m.exponets(3, 22)
 
+def getuserval(msg,  printInput=False ):
+    print(msg)
+    n = input()
+    i = int( n )
+    if printInput:
+        print("Value input: " ,  "{:.2f}".format( i) )
+    return i
+
 
 if __name__ == '__main__':
 
@@ -114,13 +134,23 @@ if __name__ == '__main__':
     # m = myth()
     # m.demo()
     # 1 year == 8760
+    prt = pp()
+    prt. tt(11)
     rc = ReadConfig()
-    args = rc. readInput("Enter a value( $ ) to analyze time divisions:")
-    t = args
-    print("Value input: " + t)
-    tt = int(t)
-    m = myth(tt)
+    t = getuserval("Enter a value( $ ) to analyze time divisions:",  True)
+
+    rt = getuserval("Enter a hourly rate( $/hr ) : ")
+
+    prt. tt(11)
+    years = getuserval("Enter #years:  ",  True)
+    # cv = convert()
+    m = myth(t)
+    m. setHrRate(rt)
+    m. setyears(years)
     m.demo()
+
+    prt. tt(111, '-', '.')
+
 
 
 
