@@ -9,6 +9,7 @@ from 'The mythical man month'
 from convert import convert
 
 from ReadConfig import ReadConfig
+import breakdown
 
 class myth():
 
@@ -42,7 +43,7 @@ class myth():
     def getHrRate(self): return self.hourly
     def setHrRate(self, w): self.hourly = w
 
-    def setyears(self,  y):  self. yearx = y
+    def setYears(self,  y):  self. yearx = y
 
     def compountInterest(self,  p, r,  n, t):
         p = (1 + r/n)^nt
@@ -66,6 +67,8 @@ class myth():
         w = self.amount / (hrperyear*self.hourly)
         self.workers = int(w)
         self.conv.setVal(hrperyear*self.workers)
+        an = hrperyear*self.hourly
+        tl = hrperyear*self.hourly * self. yearx
 
         print(' {    ')
         print('   {  ')
@@ -76,14 +79,14 @@ class myth():
         print('     ',  str(offhr) + " hours off")
         print('     ',  str(yrhr) + " hours-> year")
         print('     ',    "  {:.2f}".format(100*hrperyear/yrhr), "% time working billed. "  )
-        print('     ',  'annual $: ' , "{:,}".format(hrperyear*self.hourly) )
+        print('     ',  'annual $: ' , "{:,}".format( an ) )
         print('     ',  'month $: ' , "{:,}".format(self.hoursper * self.hourly * 4) )
         print('     ',  'weekly $: ' , "{:,}".format(self.hoursper * self.hourly) )
         print('     ',  'hourly $: ' , str(self.hourly) )
         print('  }  ')
 
         print('     ',  'years #: ' , "{:,}".format(self. yearx) )
-        print('     ',  'Total $: ' , "{:,}".format(hrperyear*self.hourly*self.yearx) )
+        print('     ',  'Total $: ' , "{:,}".format( tl ) )
         print('     ',  '___')
         print('     ',  "Workers/parts: " ,"{:,}".format( self.workers) )
         print('     ',  'annual $: ' , "{:,}".format(self.hourly*self.conv.getVal() ) )
@@ -91,10 +94,11 @@ class myth():
         print('     ',  'rem $: ' , "{:.2f}".format(self.amount - hrperyear*self.hourly*self.workers) )
         print('     ',  'Hours per year Total: ', "{:,}".format( self.conv.getVal()) )
         print('     ', 'note : ',  "Converting for context...")
-        self.conv.demo()
-        print('     ',  "Years: ", "{:,.2f}".format( self.conv.htoYears() ) )
-        print('  }  ')
-        print('  . . .  ')
+        print('     ')
+        # self.conv.demo()
+        # print('     ',  "Years: ", "{:,.2f}".format( self.conv.htoYears() ) )
+        # print('  . . .  ')
+        return an,  tl
 
     def d2(self):
 
@@ -138,18 +142,29 @@ if __name__ == '__main__':
     # m.demo()
     # 1 year == 8760 == 525600
 
-
+    tt =      333111000
+    hrt = 52 #34359738368
+    years = 1
     # prompt user for values,  do the math. with some formatting. .
-    t = getuserval("Enter a value( $ ) to analyze time divisions:",  True)
-    rt = getuserval("Enter a hourly rate( $/hr ) : ")
-    years = getuserval("Enter #yx:  ",  True)
+    # t = getuserval("Enter a value( $ ) to analyze time divisions:",  True)
+    # hrt = getuserval("Enter a hourly rate( $/hr ) : ")
+    # years = getuserval("Enter #yx:  ",  True)
     # cv = convert()
-    m = myth(t)
-    m. setHrRate(rt)
-    m. setyears(years)
-    m.demo()
+    m = myth(tt)
+    m. setHrRate(hrt)
+    m. setYears(years)
+    y,  t = m.demo()
+    msg = 'Starting Value $ {:.2f}'.format(y) + ' total $: {:.2f}'.format(t)
+    breakdown.show(msg)
+    div = 12 + 3 + .3 #mrent , save,spend, tax, kids?/invent?/hobbies...
+    # rn = breakdown.showDiv( t ,div) #, True)
+    # msg = 'returned Value $ {:.2f}'.format(rn) + ' \n'
+    # breakdown.show(msg)
 
-
+    ee = breakdown.evenSplit( t , div, True)
+    rn = breakdown.bigSplit( t ,3, div, False)
+    msg = 'returned Value $ {:,.2f}'.format(rn)+ ' \n'
+    breakdown.show(msg)
 
 
 

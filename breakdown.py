@@ -21,14 +21,14 @@ class bd():
 
 '''
 
-    mparse = 0
-    rc = 0
-    val = 7.1
+
+    val = 1.1
+    div = 1
 
     def __init__(self, v=0):
         if v == 0: pass
         else:  self.val = v
-        self. demo()
+        # self. demo()
         # self.rc = ReadConfig("testing... 1 2 3")
         # self.mparse = self.rc.getCommandArgs(False)
         # print(self.mparse)
@@ -55,6 +55,12 @@ class bd():
         return self.val
 
     def setVal(self, v):
+        self.val = v
+
+    def getDivs(self):
+        return self.val
+
+    def setDivs(self, v):
         self.val = v
 
     def htoDays(self):
@@ -120,23 +126,10 @@ class bd():
         print ('    ', "Days   : " ,  "{:,.1f}".format(self.htoDays()) )
 
     def demo(self):
-        m = self
-        if self.val > 10:
-            m.demoHr2yrs()
-            m.demoHr2ms()
-        else:
-            m.demoHr2ms()
-            m.demoHr2yrs()
+        qny( True, ['demo'], self.demoHr2yrs(), self.demoHr2ms() )
 
-def getuserval(msg,  printInput=False ):
-    print(msg)
-    n = input()
-    f = float( n )
-    # i = int( n )
-    if printInput:
-        print("Value input: " ,    "{:.2f}".format( f )  )
-    return
 
+# -------------------------------------------------------------
 
     #some blank functions/methods/what. . .
 def t11(): print('non') #print('no initial args')
@@ -147,29 +140,121 @@ def t1111(a):  print('1000 : ',  a)
  # returned output
 def qny(c,  arg,  f,  m):
     b = []
-    if len(arg) == 1:
-        if c :  b = f(arg)
-        else :  b = m(arg)
-    elif len(arg) == 0: t11()
+    # el
+    if len(arg) == 0: #t11()
+        if c :  b = f()
+        else :  b = m()
+    # elif len(arg) == 1:
+    #         if c :  b = f(arg)
+    #         else :  b = m(arg)
     return b
 
+def qtest():
+    #manage arguments for gen funcs.
+    aaa = []
+    a = ' blah'
+    aa = ['stuff',  'jumk',  'junk']
+    print('?  test. . . ')
+    t1(" blahhh")
+    t1111(aa)
+    for i in range(11):
+        if i%3==1: aa.append(a)
+        qny( i%4==0, aaa, t1, t11 )
+
+
+# -------------------------------------------------------------
+
+def evenSplit(a, n, showSplit=False):
+    s = a // n # NOTE: whole percentage only. no change ;p
+    r = a % n
+    st = '{:,.2f}'.format(n) + ' split : {:,.2f}'.format(a) + ' ; extra: {:,.2f}'.format(r)
+    if showSplit:
+        show(st)
+        for i in range(0, int(n) ):
+            show( " {: <5}".format(i+1 ) + "...  $:  {:,.2f}".format(s)  )
+    show(" n:  {:.0f}".format(n) + "   x p:  {:,.2f}".format(s) +" extra:  {:,.2f}".format(r) )
+    return s, r
+
+def bigSplit(a, n, nn, showSplit=False):
+    hf = a/3
+    evenSplit(hf, n, showSplit)
+    evenSplit(hf, nn, showSplit)
+    return hf
+
+def adsp(msg):
+    msg+= '\n'
+    return msg
+
+def showDiv( amount=10000.00, divs=11.1, sh=False):
+    # self.setVal(amount)
+    # self.setDivs( divs)
+    # show('  --> Break Down in to ' + str( divs ) + ' parts, ')
+    # show('    inital   : {:,.2f}'.format( amount ) )
+    p, e = evenSplit(amount, divs, sh)
+
+    msg = 'Even split Parts: {:,.2f}'.format( divs )
+    show(msg)
+    msg = ''
+    msg += '    ex: {:,.2f}'.format(e)
+    msg += '    x: {:,.2f}'.format( p )
+    msg = adsp(msg)
+    msg += '   3 way split / x even split'
+    show( msg )
+
+
+    if divs >= 5.0:
+        total = e + bigSplit(amount, 3, divs-3, sh)
+    else :
+        total = e + bigSplit(amount, 3, 3, sh)
+    if sh: show(' own {:,.2f}'.format(divs) )
+    # show(' gettin it...')
+    show('  --> Break Down {:,.2f}'.format(divs) +' parts. done.')
+    return total
+# -------------------------------------------------------------
+
+def show(msg, pre = '   ', sux = '    . . . '):
+    s = pre + str(msg)
+    l = len(s)
+    y = 55-len(sux)-l
+    for i in range(y): s+= ' '
+    s += sux
+    print(s)
+    return s
+
+# show a msg and get a response, expect a float/int...
+def getuserval(msg,  printInput=False ):
+    print(msg)
+    n = input()
+    f = float( n )
+    # i = int( n )
+    if printInput:
+        print("Value input: " ,    "{:.2f}".format( f )  )
+    return f
+def toc(a):
+    return a *9876
+
+def showL(lst, showIndex = False):
+    i = 0
+    for e in lst:
+        f = float(e)
+        i+=1
+        show( '{:.0f}'.format(i) + '  {:.2f}'.format(f))
+# -------------------------------------------------------------
 
 if __name__ == '__main__':
     # t = 20*7*52 #*1000
         # prompt user for values,  do the math. with some formatting. .
         # t = getuserval("Enter a value( $ ) to analyze :",  True)
-        # f = getuserval("Enter number of items (1. f):  ",  True)
-        # # cv = convert()
+        # f = getuserval("Enter number of items (1. f):  ",  False)
+        t = 11*365*10   #*1000000
+        f = 15
+        tt=0
+        l = [t, f, tt]
+        showL(l)
+        # cv = convert()
         # m = bd(t)
         # m. setVal(f)
-        #
-        # m.demo()
-        aaa = []
-        a = ' blah'
-        aa = ['stuff',  'jumk',  'junk']
-        print('?  test. . . ')
-        t1(" blahhh")
-        t1111(aa)
-        for i in range(11):
-            if i%3==1: aa.append(a)
-            qny( i%4==0, aaa, t1, t11 )
+        print('-- acme rockets made in rrlabs -_^')
+        show('mepmep!!!')
+        tt = showDiv(t, f , True)
+        show( " total $ {:,.2f}".format( tt)  )
