@@ -1,7 +1,7 @@
 
 import time
 from math import pi, cos, sin, tan
-
+import breakdown
 #test program to visulaize led sequences.
 
 class pp:
@@ -49,7 +49,11 @@ def deg(rad):
 def rad(deg):
     return pi * deg/180
 
-
-
+# fuck you time. ^_^
+leap = 365*4+1
+y = leap /10
+m = y /8
+lm = " {: <5}".format( leap ) + " {: <15}".format( y ) + " {: <25}".format( m )
+breakdown. show(lm)
 l = pp()
-l. tt(111888,  33,  "x",  '\n')
+l. idk(leap,  y)
