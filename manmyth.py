@@ -9,7 +9,6 @@ from 'The mythical man month'
 from convert import convert
 
 from ReadConfig import ReadConfig
-from patternprinter import pp
 
 class myth():
 
@@ -67,31 +66,35 @@ class myth():
         w = self.amount / (hrperyear*self.hourly)
         self.workers = int(w)
         self.conv.setVal(hrperyear*self.workers)
-        print("$$$", "{:,}".format(self.amount ) )
-        print("hours per:", self.hoursper)
-        print('52 weeks / One year..')
-        print(str(hrperyear) + " hours per year per worker")
-        print(str(offhr) + " hours off")
-        print(str(yrhr) + " hours-> year")
-        print(  "  {:.2f}".format(100*hrperyear/yrhr), "% time working billed. "  )
-        print('annual $: ' , "{:,}".format(hrperyear*self.hourly) )
-        print('month $: ' , "{:,}".format(self.hoursper * self.hourly * 4) )
-        print('weekly $: ' , "{:,}".format(self.hoursper * self.hourly) )
-        print('hourly $: ' , str(self.hourly) )
-        print()
 
-        print('years #: ' , "{:,}".format(self. yearx) )
-        print('Total $: ' , "{:,}".format(hrperyear*self.hourly*self.yearx) )
-        print('___')
-        print("Workers/parts: " ,"{:,}".format( self.workers) )
-        print('annual $: ' , "{:,}".format(self.hourly*self.conv.getVal() ) )
-        print('rem $: ' , "{:,}".format(self.amount - hrperyear*self.hourly*self.workers) )
-        print('rem $: ' , "{:.2f}".format(self.amount - hrperyear*self.hourly*self.workers) )
-        print('Hours per year Total: ', "{:,}".format( self.conv.getVal()) )
-        print("Converting for context...")
+        print(' {    ')
+        print('   {  ')
+        print( '     ',  "$$$", "{:,}".format(self.amount ) )
+        print('     ',  "hours per week:", self.hoursper)
+        print('     ',  '52 weeks / One year..')
+        print('     ',  str(hrperyear) + " hours per year per worker")
+        print('     ',  str(offhr) + " hours off")
+        print('     ',  str(yrhr) + " hours-> year")
+        print('     ',    "  {:.2f}".format(100*hrperyear/yrhr), "% time working billed. "  )
+        print('     ',  'annual $: ' , "{:,}".format(hrperyear*self.hourly) )
+        print('     ',  'month $: ' , "{:,}".format(self.hoursper * self.hourly * 4) )
+        print('     ',  'weekly $: ' , "{:,}".format(self.hoursper * self.hourly) )
+        print('     ',  'hourly $: ' , str(self.hourly) )
+        print('  }  ')
+
+        print('     ',  'years #: ' , "{:,}".format(self. yearx) )
+        print('     ',  'Total $: ' , "{:,}".format(hrperyear*self.hourly*self.yearx) )
+        print('     ',  '___')
+        print('     ',  "Workers/parts: " ,"{:,}".format( self.workers) )
+        print('     ',  'annual $: ' , "{:,}".format(self.hourly*self.conv.getVal() ) )
+        print('     ',  'rem $: ' , "{:,}".format(self.amount - hrperyear*self.hourly*self.workers) )
+        print('     ',  'rem $: ' , "{:.2f}".format(self.amount - hrperyear*self.hourly*self.workers) )
+        print('     ',  'Hours per year Total: ', "{:,}".format( self.conv.getVal()) )
+        print('     ', 'note : ',  "Converting for context...")
         self.conv.demo()
-        print("Years: ", "{:,.2f}".format( self.conv.htoYears() ) )
-
+        print('     ',  "Years: ", "{:,.2f}".format( self.conv.htoYears() ) )
+        print('  }  ')
+        print('  . . .  ')
 
     def d2(self):
 
@@ -133,23 +136,19 @@ if __name__ == '__main__':
 
     # m = myth()
     # m.demo()
-    # 1 year == 8760
-    prt = pp()
-    prt. tt(11)
-    rc = ReadConfig()
+    # 1 year == 8760 == 525600
+
+
+    # prompt user for values,  do the math. with some formatting. .
     t = getuserval("Enter a value( $ ) to analyze time divisions:",  True)
-
     rt = getuserval("Enter a hourly rate( $/hr ) : ")
-
-    prt. tt(11)
-    years = getuserval("Enter #years:  ",  True)
+    years = getuserval("Enter #yx:  ",  True)
     # cv = convert()
     m = myth(t)
     m. setHrRate(rt)
     m. setyears(years)
     m.demo()
 
-    prt. tt(111, '-', '.')
 
 
 

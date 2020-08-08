@@ -37,7 +37,7 @@ class spit:
         ms = msg.split(' ')
         sm = 1
         for w in ms:
-            print(w)
+            print( w )
             self. slp(t)
             sm += t
         print(msg, end="\n")
@@ -50,7 +50,8 @@ def deg(rad):
 def rad(deg):
     return pi * deg/180
 
-hello = " x x x "
+hello = " ..."
+vlginto = "Hi! My name is (rhymes with peachy) and I live in New York City. New videos on my channel every week! I upload vlogs, tech reviews, how-to / behind the scenes travel & lifestyle  "
 prms = [ 1,  2,  3,  5,  7,  11,  17,  23,  37,  47,  57,  67,  79,  83,  91] #. . . ?
 # iniit stuff here but whatever. . .
 l = spit()

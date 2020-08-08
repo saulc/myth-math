@@ -1,53 +1,34 @@
 '''
-Created on Feb 13, 2016
+Created on 8720
 
 @author: saul
 '''
-from ReadConfig import ReadConfig
 
 
-class convert():
+class bd():
 
-    val =  1600000
     '''
 
  # ====================== +++++++++++++++++++++
   # ====================== +++++++++++++++++++++
    # ====================== +++++++++++++++++++++
-    working:  hours to month/year/day
-    date ms to am/pm/ dwy
-
-    //intermediate convertion strings not ready
 
     needs converting:
     why no ?  in python?  ^_-
     do this in c-+- ? ? ?
      # ====================== +++++++++++++++++++++
-      # ====================== +++++++++++++++++++++
-       # ====================== +++++++++++++++++++++
-    private String secToString(long td){
-        //format secs to display time nicely.
-        long second = (td ) % 60
-        long minute = (td / 60) % 60
-        long hour = (td / ( 60 * 60)) % 24
-        long day = (td / ( 60 * 60 * 24) )
 
-        String m = (day > 0) ? day + "d" : ""
-        m += (hour > 0) ? hour + "h" : ""
-        m += (minute > 0) ? minute + "m" : ""
-        m += String.format("%02ds", second)
 
-        return m
-    }
-                print ("  " ,  "{:,.2f}".format( self.htoYears()) )
 '''
 
     mparse = 0
     rc = 0
+    val = 7.1
 
     def __init__(self, v=0):
         if v == 0: pass
         else:  self.val = v
+        self. demo()
         # self.rc = ReadConfig("testing... 1 2 3")
         # self.mparse = self.rc.getCommandArgs(False)
         # print(self.mparse)
@@ -129,8 +110,6 @@ class convert():
 
     def demoHr2ms(self):
         print ('    ', "Hours   :" , "{:,.1f}".format( self.getVal()) )
-        print ('    ', "minutes : " , "{:,.1f}".format( self.hrtoMin()) )
-        print ('    ', "seconds : " , "{:,.1f}".format( self.hrtoSec()) )
         print ('    ', "micros  : " , "{:,.2f}".format( self.hrtoMs()) )
         print ('    ', "nanos   : " , "{:,.0f}".format( self.hrtoNs()) )
 
@@ -139,10 +118,6 @@ class convert():
     def demoHr2yrs(self):
         print ('    ', "Hours  : " , "{:,.1f}".format( self.getVal()) )
         print ('    ', "Days   : " ,  "{:,.1f}".format(self.htoDays()) )
-        print ('    ', "Weeks  : " , "{:,.1f}".format(self.htoWeeks()) )
-        print ('    ', "Months : " , "{:,.2f}".format( self.htoMonths()) )
-        print ('    ', "Years  : " , "{:,.3f}".format( self.htoYears()) )
-        print ('    ', "M     : " , "{:,.1f}".format( self.htoYears()//1000 ) )
 
     def demo(self):
         m = self
@@ -153,20 +128,42 @@ class convert():
             m.demoHr2ms()
             m.demoHr2yrs()
 
+def getuserval(msg,  printInput=False ):
+    print(msg)
+    n = input()
+    f = float( n )
+    # i = int( n )
+    if printInput:
+        print("Value input: " ,    "{:.2f}".format( f )  )
+    return
+
+
+    #some blank functions/methods/what. . .
+def t1( a):  print ('1    : ',  a)
+def t1111(a):  print('1000 : ',  a)
+ # ths = something conditional ?  ok :  no way;
+ # condition, input,  tf,  ff
+ # returned output
+def qny(c,  arg,  f,  m):
+    b = []
+    if c :  b = f(arg)
+    else :  b = m(arg)
+    return b
+
 
 if __name__ == '__main__':
     # t = 20*7*52 #*1000
-    # m = convert(t)
-    # # m.setVal(t)
-    # m.demo()
-    # print( str(t) )
-    rc = ReadConfig()
-    args = rc. readInput("Enter a value(hours) to Convert:")
-    t = args
-    print("Value input: " + t)
-    tt = int(t)
-    m = convert(tt)
-    m.demo()
-    # m.testStrings(rc, "anything else?  ...")
-
-    # m.getCommandArgs
+        # prompt user for values,  do the math. with some formatting. .
+        # t = getuserval("Enter a value( $ ) to analyze :",  True)
+        # f = getuserval("Enter number of items (1. f):  ",  True)
+        # # cv = convert()
+        # m = bd(t)
+        # m. setVal(f)
+        #
+        # m.demo()
+        a = ' blah'
+        aa = ['stuff',  'jumk',  'junk']
+        print('?  test. . . ')
+        t1(" blahhh")
+        t1111(aa)
+        qny( 0, aa, t1, t1111 )
