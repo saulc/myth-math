@@ -139,6 +139,7 @@ def getuserval(msg,  printInput=False ):
 
 
     #some blank functions/methods/what. . .
+def t11(): print('non') #print('no initial args')
 def t1( a):  print ('1    : ',  a)
 def t1111(a):  print('1000 : ',  a)
  # ths = something conditional ?  ok :  no way;
@@ -146,8 +147,10 @@ def t1111(a):  print('1000 : ',  a)
  # returned output
 def qny(c,  arg,  f,  m):
     b = []
-    if c :  b = f(arg)
-    else :  b = m(arg)
+    if len(arg) == 1:
+        if c :  b = f(arg)
+        else :  b = m(arg)
+    elif len(arg) == 0: t11()
     return b
 
 
@@ -161,9 +164,12 @@ if __name__ == '__main__':
         # m. setVal(f)
         #
         # m.demo()
+        aaa = []
         a = ' blah'
         aa = ['stuff',  'jumk',  'junk']
         print('?  test. . . ')
         t1(" blahhh")
         t1111(aa)
-        qny( 0, aa, t1, t1111 )
+        for i in range(11):
+            if i%3==1: aa.append(a)
+            qny( i%4==0, aaa, t1, t11 )
