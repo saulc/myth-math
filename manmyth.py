@@ -88,14 +88,14 @@ class myth():
         print('     ',  'years #: ' , "{:,}".format(self. yearx) )
         print('     ',  'Total $: ' , "{:,}".format( tl ) )
         print('     ',  '___')
-        print('     ',  "Workers/parts: " ,"{:,}".format( self.workers) )
+        print('     ',  "units: " ,"{:,}".format( self.workers) )
         print('     ',  'annual $: ' , "{:,}".format(self.hourly*self.conv.getVal() ) )
         print('     ',  'rem $: ' , "{:,}".format(self.amount - hrperyear*self.hourly*self.workers) )
         print('     ',  'rem $: ' , "{:.2f}".format(self.amount - hrperyear*self.hourly*self.workers) )
         print('     ',  'Hours per year Total: ', "{:,}".format( self.conv.getVal()) )
         print('     ', 'note : ',  "Converting for context...")
         print('     ')
-        # self.conv.demo()
+        self.conv.demo()
         # print('     ',  "Years: ", "{:,.2f}".format( self.conv.htoYears() ) )
         # print('  . . .  ')
         return an,  tl
@@ -142,8 +142,8 @@ if __name__ == '__main__':
     # m.demo()
     # 1 year == 8760 == 525600
 
-    tt =      333111000
-    hrt = 52 #34359738368
+    tt =      67773311
+    hrt = 752 #34359738368
     years = 1
     # prompt user for values,  do the math. with some formatting. .
     # t = getuserval("Enter a value( $ ) to analyze time divisions:",  True)
@@ -154,16 +154,18 @@ if __name__ == '__main__':
     m. setHrRate(hrt)
     m. setYears(years)
     y,  t = m.demo()
-    msg = 'Starting Value $ {:.2f}'.format(y) + ' total $: {:.2f}'.format(t)
+    msg = 'Starting Value $ {:.2f}'.format(y) + ' total $: {:,.2f}'.format(t)
     breakdown.show(msg)
     div = 12 + 3 + .3 #mrent , save,spend, tax, kids?/invent?/hobbies...
     # rn = breakdown.showDiv( t ,div) #, True)
     # msg = 'returned Value $ {:.2f}'.format(rn) + ' \n'
     # breakdown.show(msg)
 
-    ee = breakdown.evenSplit( t , div, True)
-    rn = breakdown.bigSplit( t ,3, div, False)
-    msg = 'returned Value $ {:,.2f}'.format(rn)+ ' \n'
+    er = breakdown.rankSplit( tt , 11, True, True)
+    for i in range(3,14):
+        ee = breakdown.evenSplit( er , i, False, True)
+    # rn = breakdown.bigSplit( t ,3, div, True)
+        msg = 'returned Value $ {:,.2f}'.format(ee) + ' \n'
     breakdown.show(msg)
 
 

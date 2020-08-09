@@ -163,17 +163,20 @@ def qtest():
 
 
 # -------------------------------------------------------------
+#
+#  "{:><15}|{:-^10}|{:<>15}".format(left_aligned, center, right_aligned)
+# 'Left Align>>>>>|-Centered-|<<<<Right Align'
 
-def evenSplit(a, n, showSplit=False):
+def evenSplit(a, n, showSplit=False, si = False):
     s = a // n # NOTE: whole percentage only. no change ;p
     r = a % n
     st = '{:,.2f}'.format(n) + ' split : {:,.2f}'.format(a) + ' ; extra: {:,.2f}'.format(r)
     if showSplit:
         show(st)
         for i in range(0, int(n) ):
-            show( " {: <5}".format(i+1 ) + "...  $:  {:,.2f}".format(s)  )
-    show(" n:  {:.0f}".format(n) + "   x p:  {:,.2f}".format(s) +" extra:  {:,.2f}".format(r) )
-    return s, r
+            show( "{: <11}".format(i+1 ) + "...  $:  {:,.2f}".format(s)  )
+    if si: show(" n:  {: <3}".format(n) + "   x p: {:,.2f}".format(s) +"  extra:  {:,.2f} ".format(r) )
+    return s
 
 def bigSplit(a, n, nn, showSplit=False):
     hf = a/3
@@ -210,6 +213,22 @@ def showDiv( amount=10000.00, divs=11.1, sh=False):
     # show(' gettin it...')
     show('  --> Break Down {:,.2f}'.format(divs) +' parts. done.')
     return total
+# -------------------------------------------------------------
+
+def rankSplit(a, n, showSplit=False, si = False):
+    nn = n+2    #one part to split
+    s = a// nn
+    ss = s/n #i dont not not not not know if if know what i'm doing here, maybe...
+    r = a%nn + s #one part for extra
+    st = '{:,.2f}'.format(n) + ' split : {:,.2f}'.format(a) + ' ; extra: {:,.2f}'.format(r)
+    if showSplit:
+        show(st)
+        for i in range(0, int(n) ):
+            show( " {: <5}".format(i+1 ) + "...  $:  {:,.2f}".format(s+(n-i)*ss)  )
+    if si: show(" n:  {:.0f}".format(n) + "   x p:  {:,.2f}".format(s) +" extra:  {:,.2f}".format(r) )
+    return r
+
+
 # -------------------------------------------------------------
 
 def show(msg, pre = '   ', sux = '    . . . '):
@@ -250,11 +269,12 @@ if __name__ == '__main__':
         f = 15
         tt=0
         l = [t, f, tt]
-        showL(l)
+        # showL(l)
         # cv = convert()
         # m = bd(t)
         # m. setVal(f)
-        print('-- acme rockets made in rrlabs -_^')
+        # print('-- acme rockets made in rrlabs -_^')
         show('mepmep!!!')
         tt = showDiv(t, f , True)
+        rk = rankSplit(t, 3, True)
         show( " total $ {:,.2f}".format( tt)  )
