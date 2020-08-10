@@ -266,7 +266,7 @@ if __name__ == '__main__':
         # t = getuserval("Enter a value( $ ) to analyze :",  True)
         # f = getuserval("Enter number of items (1. f):  ",  False)
         # t = 11*365*10   #*1000000
-        t = 27777
+        t = 3277777
         f = 15
         tt=0
         l = [t, f, tt]
@@ -280,10 +280,11 @@ if __name__ == '__main__':
         show( " total $ {:,.2f}".format( t)  )
         tt += evenSplit(t, f,   False, True)
         tt = bigSplit(tt, f, 3,  False, True)
-        # rk = rankSplit(t, 3, True)
+        rk = rankSplit(t, 3*11, True)
         show( " total $ {:,.2f}".format( tt)  )
 
-        # moved from mm,  shuould be another split func. . . . 
+        # moved from mm,  shuould be another split func. . . .
+        #def jumpSplit(  ) [ ] std arg list?
         # cut up a value for part/time break down analaysis...
         # tsum = [ ]
         # tol = 0

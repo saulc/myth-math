@@ -125,7 +125,7 @@ def getuserval(msg,  printInput=False ):
     n = input()
     i = int( n )
     if printInput:
-        print("Value input: " ,  "{:.2f}".format( i) )
+        print("Value input: " ,  "{:,.2f}".format( i) )
     return i
 
 

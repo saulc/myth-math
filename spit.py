@@ -81,29 +81,19 @@ class spit:
         breakdown.show(str(sm))
         return sm
 
-#general timed printer, with new line ever 't' spaces/characters...
-    def tp(self, msg,  tm,  t=44):
-        ms = len(msg)
+#general timed printer, with new line pause 't' spaces/characters...
+    def tp(self, msg,  t=44):
+        ms = len(msg) #msg list of words/num/block/wtevr
         breakdown.show(' msg length in chars: ' + str(ms))
         sm = [0, 0]
         # print(str(sm))
-        st = 0
-        f =  t
-        for i in range(0,ms,t):
+        st = 0 #iterator? always puts me to sleep, just keep track of where the last ...
+        for i in range(0, ms, t):
             g = ''
-            for j in range(i, st):
-                if j < ms:
-                    g += msg[j]
-                st += t
-                f += t
-
+            g+= str ( msg[i:i+t] )
             g += ' \n'
             print(g)
             self.slp(t)
-            # if i %t == 0 :
-            #     g += ' \n'
-            #     self.slp(t*2)
-                # breakdown.show(g)
         return sm
 
 
@@ -121,34 +111,39 @@ def deg(rad):
 def rad(deg):
     return pi * deg/180
 
-def abc(astring):
+def abc(astring): pass
     #take a string, put the 'words' in abc order...
+
+def stoL(astring):
     wd = astring.split(' ')
     rt = []
     for w in wd:
-        rt.append( w , i)
-    return rt #made this a string too tho.....
+        rt.append( w )
+    return rt #list for now.. #made this a string too tho.....
 
 
 
-skl = 'CalTech CalSci CMU harveyMudd Cambridge Oxford' #Berkley Cornell Stanford UC CSU Slo Po MIT Hop'
-ivish = 'Stanford Harvard Mit Yale princeton Columbia Dude NotreDame Cornel Berkley USC UCLA'
-vlginto = "Hi! My name is (rhymes with peachy) and I live in New York City. New videos on my channel every week! I upload vlogs, tech reviews, how-to / behind the scenes travel & lifestyle  "
-prms = [ 1,  2,  3,  5,  7,  11,  17,  23,  37,  47,  57,  67,  79,  83,  91] #. . . ?
-# iniit stuff here but whatever. . .
+# skl = 'CalTech CalSci CMU harveyMudd Cambridge Oxford' #Berkley Cornell Stanford UC CSU Slo Po MIT Hop'
+# ivish = 'Stanford Harvard Mit Yale princeton Columbia Dude NotreDame Cornel Berkley USC UCLA'
+# vlginto = "Hi! My name is (rhymes with peachy) and I live in New York City. New videos on my channel every week! I upload vlogs, tech reviews, how-to / behind the scenes travel & lifestyle  "
+# prms = [ 1,  2,  3,  5,  7,  11,  17,  23,  37,  47,  57,  67,  79,  83,  91] #. . . ?
+# # iniit stuff here but whatever. . .
+# l = spit()
+# # l. slp(10)
+# a = l. tt(skl,  333,  121 )
+# a = l.tt(ivish,  333,  221 )
+# print('   More schools... ')
+# # a = l. tt(ivish,  333,  51 )
+# print('   -- College acceptance test -- ')
+
+
+
 l = spit()
-# l. slp(10)
-a = l. tt(skl,  333,  121 )
-a = l.tt(ivish,  333,  221 )
-print('   More schools... ')
-# a = l. tt(ivish,  333,  51 )
-print('   -- College acceptance test -- ')
-
-# filename = "ee.txt"
-# fc = l.openFile(filename)
-# breakdown.show('print spit test 3')
+filename = "alphaCal.txt"
+fc = l.openFile(filename)
+breakdown.show('print spit test 33')
 # breakdown.show( fc )
-# l.tp(fc, 10, 101)
+l.tp( stoL(fc) , 22)
 # breakdown.show( skl )
 # print(fc)
 # print( '   ', skl)

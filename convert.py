@@ -154,17 +154,21 @@ class convert():
             m.demoHr2yrs()
 
 
+def getuserval(msg,  printInput=False ):
+    print(msg)
+    n = input()
+    i = int( n )
+    if printInput:
+        print("Value input: " ,  "{:, .2f}".format( i) )
+    return i
+
 if __name__ == '__main__':
     # t = 20*7*52 #*1000
     # m = convert(t)
     # # m.setVal(t)
     # m.demo()
     # print( str(t) )
-    rc = ReadConfig()
-    args = rc. readInput("Enter a value(hours) to Convert:")
-    t = args
-    print("Value input: " + t)
-    tt = int(t)
+    tt = getuserval("Enter a value(hours) to Convert: ", True)
     m = convert(tt)
     m.demo()
     # m.testStrings(rc, "anything else?  ...")

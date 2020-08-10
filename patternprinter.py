@@ -25,11 +25,19 @@ class pp:
     def idk(self, c, a=44, b="-",  bb ="\n"):
         self. num = c
         temp = ''
+        lns = 0
+        rm =  (a*lns)
+        bk =  c//a // 5
         for i in range(0, c):
-                if i % a == 0:
+                if i % a == 0 or lns % 5 == 0:
                     temp += bb
-                else: temp += b
-        print(temp)
+                    lns += 1
+
+                else: temp += str(i).zfill(4) + ' '
+
+        print(str(c) ,  ' chars x ',  str(a),  ' cols   xx',  str( bk ))
+        print(lns,  ' lines x ',  str(a),  ' cols  tl: ',  str(rm))
+        # breakdown. show(temp)
         return temp
 
 
@@ -51,9 +59,12 @@ def rad(deg):
 
 # fuck you time. ^_^
 leap = 365*4+1
-y = leap /10
+y = leap // 100
+y = 20
 m = y /8
 lm = " {: <5}".format( leap ) + " {: <15}".format( y ) + " {: <25}".format( m )
+breakdown. show('# fuck you time!.   ^_^')
 breakdown. show(lm)
 l = pp()
-l. idk(leap,  y)
+grd = l. idk(leap,  y)
+breakdown. show(grd)
