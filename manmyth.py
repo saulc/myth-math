@@ -131,20 +131,14 @@ def getuserval(msg,  printInput=False ):
 
 if __name__ == '__main__':
 
-    # c = 5
-    # print("..." , str( c) )
-    # cv = convert(c)
-    # # cv.setVal()
-    # cv.demo()
-    # print("----")
-
+ # hour of 'work' to $ cost/value .
     # m = myth()
     # m.demo()
     # 1 year == 8760 == 525600
 
-    tt =      67773311
-    hrt = 752 #34359738368
-    years = 1
+    tt =      1677711111111
+    hrt = 22 #34359738368
+    years = 4
     # prompt user for values,  do the math. with some formatting. .
     # t = getuserval("Enter a value( $ ) to analyze time divisions:",  True)
     # hrt = getuserval("Enter a hourly rate( $/hr ) : ")
@@ -161,11 +155,26 @@ if __name__ == '__main__':
     # msg = 'returned Value $ {:.2f}'.format(rn) + ' \n'
     # breakdown.show(msg)
 
-    er = breakdown.rankSplit( tt , 11, True, True)
-    for i in range(3,14):
-        ee = breakdown.evenSplit( er , i, False, True)
+    # cut up a value for part/time break down analaysis...
+    tsum = [ ]
+    tol = 0
+    breakdown.show(' ------- ')
+    breakdown.show('rank split breakdown.')
+    # er = breakdown.rankSplit( tt , 11, True, True)
+    #amount/ parts/ show details/ show single line info
+    breakdown.show('Stepped split breakdown.')
+    k = 999900000
+    for i in range(3,k, k//10):
+        #stay an order of mag down in step to keep the results on the screen... less...
+        ee = breakdown.evenSplit( tt , i, False, True) #amount/ parts/ show details/ show single line info
+        tsum.append( ee )
+        tol += ee
     # rn = breakdown.bigSplit( t ,3, div, True)
-        msg = 'returned Value $ {:,.2f}'.format(ee) + ' \n'
+        msg = 'min returned Value $ {:,.2f}'.format(ee) + ' \n'
+    tsum.insert( 0, tol)    #set the total as the first/0 element
+    # breakdown.showL(tsum)
+    m2 = 'element Value $ {:,.2f}'.format(tsum[0]) + ' \n'
+    breakdown.show(m2)
     breakdown.show(msg)
 
 

@@ -37,9 +37,10 @@ class spit:
         # r = random.randint(0, len[op])  #make this check stuff later... maybe? lol
         # print( str( op ) )
         r = ''
+        rr = 0
         if ii != 1:
             # shuffle( op )
-            rr = randrange(2)
+            rr = randrange(4)
             r = op[rr]
         elif ii == 1: r = op[ 0 ]
         else :  r = op[0]
@@ -61,20 +62,58 @@ class spit:
 
         return t
 
+#admin test / print admin staatus/fin aid $$$
     def tt(self, msg,  tm,  t):
         ms = msg.split(' ')
-        sm = [ ('Accepted', 0), ('conditional', 0), ('deferred', 0), ('declined', 0) ]
+        sm = [0, 0 ,0 ,0 , 0]
         # print(str(sm))
         for w in ms:
-            rsult, ty = self.adm(0)
-            sm = self.incrementType(sm, ty)
+            rsult, ty = self.adm(11)
+            sm[ty] += 1
+            sm[len(sm)-1] +=1
             # skl : status"   ##  {: <5}".format(i+1 ) + "...  $:  {:,.2f}".format(s)
             g = " {: <11}".format( w)  + " :  " + str(rsult)
-            print( g )
+            tempval = 111111/4
+            if ty <= 1: g += ' fa${:,.2f}'.format( tempval)
+            breakdown.show( g )
             self. slp(t)
 
         breakdown.show(str(sm))
         return sm
+
+#general timed printer, with new line ever 't' spaces/characters...
+    def tp(self, msg,  tm,  t=44):
+        ms = len(msg)
+        breakdown.show(' msg length in chars: ' + str(ms))
+        sm = [0, 0]
+        # print(str(sm))
+        st = 0
+        f =  t
+        for i in range(0,ms,t):
+            g = ''
+            for j in range(i, st):
+                if j < ms:
+                    g += msg[j]
+                st += t
+                f += t
+
+            g += ' \n'
+            print(g)
+            self.slp(t)
+            # if i %t == 0 :
+            #     g += ' \n'
+            #     self.slp(t*2)
+                # breakdown.show(g)
+        return sm
+
+
+    def openFile(self, fn):
+        file = open(fn, 'r')
+        s = file.read()
+        return s
+
+    def printFile(self, f):
+        print(f.read())
 
 def deg(rad):
     return rad/pi
@@ -91,17 +130,26 @@ def abc(astring):
     return rt #made this a string too tho.....
 
 
-skl = 'CalTech CalSci CMU harveyMudd Berkley Cornell Stanford UC CSU Slo Po MIT Hop'
+
+skl = 'CalTech CalSci CMU harveyMudd Cambridge Oxford' #Berkley Cornell Stanford UC CSU Slo Po MIT Hop'
 ivish = 'Stanford Harvard Mit Yale princeton Columbia Dude NotreDame Cornel Berkley USC UCLA'
 vlginto = "Hi! My name is (rhymes with peachy) and I live in New York City. New videos on my channel every week! I upload vlogs, tech reviews, how-to / behind the scenes travel & lifestyle  "
 prms = [ 1,  2,  3,  5,  7,  11,  17,  23,  37,  47,  57,  67,  79,  83,  91] #. . . ?
 # iniit stuff here but whatever. . .
 l = spit()
 # l. slp(10)
-a = l. tt(skl,  333,  21 )
-a = l.adm(0)
+a = l. tt(skl,  333,  121 )
+a = l.tt(ivish,  333,  221 )
 print('   More schools... ')
 # a = l. tt(ivish,  333,  51 )
 print('   -- College acceptance test -- ')
+
+# filename = "ee.txt"
+# fc = l.openFile(filename)
+# breakdown.show('print spit test 3')
+# breakdown.show( fc )
+# l.tp(fc, 10, 101)
+# breakdown.show( skl )
+# print(fc)
 # print( '   ', skl)
 # print (a)

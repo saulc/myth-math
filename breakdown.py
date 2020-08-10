@@ -175,13 +175,13 @@ def evenSplit(a, n, showSplit=False, si = False):
         show(st)
         for i in range(0, int(n) ):
             show( "{: <11}".format(i+1 ) + "...  $:  {:,.2f}".format(s)  )
-    if si: show(" n:  {: <3}".format(n) + "   x p: {:,.2f}".format(s) +"  extra:  {:,.2f} ".format(r) )
+    if si: show(" n:  {:,.0f}".format(n) + "   x p: {:,.2f}".format(s) +"  extra:  {:,.2f} ".format(r) )
     return s
 
-def bigSplit(a, n, nn, showSplit=False):
+def bigSplit(a, n, nn, showSplit=False, si = False):
     hf = a/3
-    evenSplit(hf, n, showSplit)
-    evenSplit(hf, nn, showSplit)
+    evenSplit(hf, n, showSplit,  si)
+    evenSplit(hf, nn, showSplit,  si)
     return hf
 
 def adsp(msg):
@@ -193,13 +193,13 @@ def showDiv( amount=10000.00, divs=11.1, sh=False):
     # self.setDivs( divs)
     # show('  --> Break Down in to ' + str( divs ) + ' parts, ')
     # show('    inital   : {:,.2f}'.format( amount ) )
-    p, e = evenSplit(amount, divs, sh)
-
-    msg = 'Even split Parts: {:,.2f}'.format( divs )
-    show(msg)
-    msg = ''
-    msg += '    ex: {:,.2f}'.format(e)
-    msg += '    x: {:,.2f}'.format( p )
+    # p, e = evenSplit(amount, divs, sh)
+    #
+    # msg = 'Even split Parts: {:,.2f}'.format( divs )
+    # show(msg)
+    # msg = ''
+    # msg += '    ex: {:,.2f}'.format(e)
+    # msg += '    x: {:,.2f}'.format( p )
     msg = adsp(msg)
     msg += '   3 way split / x even split'
     show( msg )
@@ -265,7 +265,8 @@ if __name__ == '__main__':
         # prompt user for values,  do the math. with some formatting. .
         # t = getuserval("Enter a value( $ ) to analyze :",  True)
         # f = getuserval("Enter number of items (1. f):  ",  False)
-        t = 11*365*10   #*1000000
+        # t = 11*365*10   #*1000000
+        t = 27777
         f = 15
         tt=0
         l = [t, f, tt]
@@ -275,6 +276,32 @@ if __name__ == '__main__':
         # m. setVal(f)
         # print('-- acme rockets made in rrlabs -_^')
         show('mepmep!!!')
-        tt = showDiv(t, f , True)
-        rk = rankSplit(t, 3, True)
+        # tt = showDiv(t, f , True)
+        show( " total $ {:,.2f}".format( t)  )
+        tt += evenSplit(t, f,   False, True)
+        tt = bigSplit(tt, f, 3,  False, True)
+        # rk = rankSplit(t, 3, True)
         show( " total $ {:,.2f}".format( tt)  )
+
+        # moved from mm,  shuould be another split func. . . . 
+        # cut up a value for part/time break down analaysis...
+        # tsum = [ ]
+        # tol = 0
+        # breakdown.show(' ------- ')
+        # breakdown.show('rank split breakdown.')
+        # # er = breakdown.rankSplit( tt , 11, True, True)
+        # #amount/ parts/ show details/ show single line info
+        # breakdown.show('Stepped split breakdown.')
+        # k = 999900000
+        # for i in range(3,k, k//10):
+        #     #stay an order of mag down in step to keep the results on the screen... less...
+        #     ee = breakdown.evenSplit( tt , i, False, True) #amount/ parts/ show details/ show single line info
+        #     tsum.append( ee )
+        #     tol += ee
+        # # rn = breakdown.bigSplit( t ,3, div, True)
+        #     msg = 'min returned Value $ {:,.2f}'.format(ee) + ' \n'
+        # tsum.insert( 0, tol)    #set the total as the first/0 element
+        # # breakdown.showL(tsum)
+        # m2 = 'element Value $ {:,.2f}'.format(tsum[0]) + ' \n'
+        # breakdown.show(m2)
+        # breakdown.show(msg)
