@@ -33,7 +33,7 @@ class pp:
                     temp += bb
                     lns += 1
 
-                else: temp += str(i).zfill(4) + ' '
+                else: temp += str(i).zfill(6) + ' . '
 
         print(str(c) ,  ' chars x ',  str(a),  ' cols   xx',  str( bk ))
         print(lns,  ' lines x ',  str(a),  ' cols  tl: ',  str(rm))
@@ -57,8 +57,12 @@ def deg(rad):
 def rad(deg):
     return pi * deg/180
 
-# fuck you time. ^_^
+# fuck you time. ^_^  #
+#247852
 leap = 365*4+1
+leap *= 3.14159
+leap *= 1
+leap = int(leap)
 y = leap // 100
 y = 20
 m = y /8

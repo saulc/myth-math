@@ -136,8 +136,8 @@ if __name__ == '__main__':
     # m.demo()
     # 1 year == 8760 == 525600
 
-    tt =      1677711111111
-    hrt = 22 #34359738368
+    tt =      2211111111
+    hrt = 23 #34359738368
     years = 4
     # prompt user for values,  do the math. with some formatting. .
     # t = getuserval("Enter a value( $ ) to analyze time divisions:",  True)
@@ -160,10 +160,10 @@ if __name__ == '__main__':
     tol = 0
     breakdown.show(' ------- ')
     breakdown.show('rank split breakdown.')
-    # er = breakdown.rankSplit( tt , 11, True, True)
+    er = breakdown.rankSplit( tt , 23, True, True)
     #amount/ parts/ show details/ show single line info
     breakdown.show('Stepped split breakdown.')
-    k = 999900000
+    k = 99990
     for i in range(3,k, k//10):
         #stay an order of mag down in step to keep the results on the screen... less...
         ee = breakdown.evenSplit( tt , i, False, True) #amount/ parts/ show details/ show single line info

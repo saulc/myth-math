@@ -2,7 +2,7 @@
 
 
 use <myshapes.scad> 
- 
+ use <fdf.scad>
  
  
 fn = 60;
@@ -43,7 +43,8 @@ td = 9;
 // rotate([0,0, $t *11])  
  //rotate([0,80, 0])  
 cc();
- 
+
+ translate([-200,0, 0])  ff(); //mostly for scale
 //       translate([20,0, 0])  
 // scaleex();
  
