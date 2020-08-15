@@ -46,8 +46,37 @@ class myth():
     def setYears(self,  y):  self. yearx = y
 
     def compountInterest(self,  p, r,  n, t):
-        p = (1 + r/n)^nt
-        return p
+        a = p*(1 + r/n)^nt
+        return a
+
+    def continuousInterest(self,  p, r, t):
+        a = p*e^(r*t)
+        return a
+
+    def computeInterest(self, type):
+        a = 0
+        p = 100
+        r = .02
+        #n time units , t time in years
+        n = 1
+        t = 3  #
+        if type == 0: a = self.continuousInterest()
+        elif type == 1: #compound annual
+            a = self.compountInterest(p, r, n, t)
+        elif type == 2: #compound monthly
+            n = 12 
+            a = self.compountInterest(p, r, n, t)
+        elif type == 3: #compound quarterly
+            n = 4
+            a = self.compountInterest(p, r, n, t)
+        elif type == 4: #compound weekly
+            n = 12
+            a = self.compountInterest(p, r, n, t)
+        else: #compound daily
+            n = 365
+            a = self.compountInterest(p, r, n, t)
+
+
     ## TODO: recursion refresh
     # find/redo fractional/decimal calc. add fractional powers/exp
     def exponets(self, b, a):
@@ -136,8 +165,8 @@ if __name__ == '__main__':
     # m.demo()
     # 1 year == 8760 == 525600
 
-    tt =      2211111111
-    hrt = 23 #34359738368
+    tt =      1111111
+    hrt = 323 #34359738368
     years = 4
     # prompt user for values,  do the math. with some formatting. .
     # t = getuserval("Enter a value( $ ) to analyze time divisions:",  True)
@@ -160,7 +189,7 @@ if __name__ == '__main__':
     tol = 0
     breakdown.show(' ------- ')
     breakdown.show('rank split breakdown.')
-    er = breakdown.rankSplit( tt , 23, True, True)
+    er = breakdown.rankSplit( tt , 21, True, True)
     #amount/ parts/ show details/ show single line info
     breakdown.show('Stepped split breakdown.')
     k = 99990
