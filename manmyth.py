@@ -7,8 +7,6 @@ some math based on the work - hour or "man-hour" - "man-month"
 from 'The mythical man month'
 '''
 from convert import convert
-
-from ReadConfig import ReadConfig
 import breakdown
 
 class myth():

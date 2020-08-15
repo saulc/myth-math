@@ -88,12 +88,13 @@ class spit:
         sm = [0, 0]
         # print(str(sm))
         st = 0 #iterator? always puts me to sleep, just keep track of where the last ...
-        for i in range(0, ms, t):
-            g = ''
-            g+= str ( msg[i:i+t] )
-            g += ' \n'
-            print(g)
-            self.slp(t)
+        for i in range(0, ms):
+            g = '' + msg[i]
+            # g+= str ( msg[i:i+t] )
+            if i %t == 0:
+                g += ' \n'
+            print(g, end=' ')
+            self.slp(t, True)
         return sm
 
 
@@ -123,27 +124,28 @@ def stoL(astring):
 
 
 
-# skl = 'CalTech CalSci CMU harveyMudd Cambridge Oxford' #Berkley Cornell Stanford UC CSU Slo Po MIT Hop'
-# ivish = 'Stanford Harvard Mit Yale princeton Columbia Dude NotreDame Cornel Berkley USC UCLA'
-# vlginto = "Hi! My name is (rhymes with peachy) and I live in New York City. New videos on my channel every week! I upload vlogs, tech reviews, how-to / behind the scenes travel & lifestyle  "
+skl = 'CalTech CalSci CMU harveyMudd Cambridge Oxford' #Berkley Cornell Stanford UC CSU Slo Po MIT Hop'
+ivish = 'Stanford Harvard Mit Yale princeton Columbia Dude NotreDame Cornel Berkley USC UCLA'
+vlginto = "Hi! My name is (rhymes with peachy) and I live in New York City. New videos on my channel every week! I upload vlogs, tech reviews, how-to / behind the scenes travel & lifestyle  "
 # prms = [ 1,  2,  3,  5,  7,  11,  17,  23,  37,  47,  57,  67,  79,  83,  91] #. . . ?
 # # iniit stuff here but whatever. . .
-# l = spit()
-# # l. slp(10)
-# a = l. tt(skl,  333,  121 )
-# a = l.tt(ivish,  333,  221 )
-# print('   More schools... ')
-# # a = l. tt(ivish,  333,  51 )
-# print('   -- College acceptance test -- ')
-
-
-
 l = spit()
-filename = "alphaCal.txt"
-fc = l.openFile(filename)
-breakdown.show('print spit test 33')
-# breakdown.show( fc )
-l.tp( stoL(fc) , 22)
+# # l. slp(10)
+a = l. tt(skl,  333,  121 )
+a = l.tt(ivish,  333,  221 )
+print('   More schools... ')
+# a = l. tt(ivish,  333,  51 )
+print('   -- College acceptance test -- ')
+
+
+
+# l = spit()
+# filename = "ee.txt"
+# fc = l.openFile(filename)
+# breakdown.show('print spit test 33')
+# # breakdown.show( fc )
+# # l.tp( fc, 22)
+# l.tp( stoL(fc) , 22)
 # breakdown.show( skl )
 # print(fc)
 # print( '   ', skl)

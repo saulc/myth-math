@@ -43,8 +43,10 @@ td = 9;
 // rotate([0,0, $t *11])  
  //rotate([0,80, 0])  
 cc();
-
- translate([-200,0, 0])  ff(); //mostly for scale
+s = 3;
+ translate([-70,0, -110])  scale([s, s, s]) cc();
+ 
+// ff(); //mostly for scale
 //       translate([20,0, 0])  
 // scaleex();
  
