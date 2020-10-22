@@ -84,8 +84,9 @@ planet(sun*11, 0, 11, 0);
 color("green")
 planet(earth*see, de, ave, 0);
 
-color("red")
-planet(mars*see, dm, avmars, -5);
+color("red")  // -1.5 etom
+planet(mars*see, dm, avmars, 2.5);
+
 color("orange")
 planet(mer*see, dme, avmer, 0);
 color("orange")
@@ -123,6 +124,7 @@ vv = 111;
 
 ship(vv, 0);
 trip = dm - de;
+
 
 module ship(  av, off){
     a = av*1;
