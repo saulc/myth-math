@@ -8,6 +8,13 @@ future version may be linked to a user item to hold stats for mutiple players
 
 i don't like basebaall. . but i know most of the rules. . .
 
+2 teams. 9 players each?
+3 out, 3 in, 3 other. pitch, catch, short(mid)stop
+time independent
+1-4 offence vs. 3x3 defence
+walks get runs. gdouble can get 2 runs?
+basebaall is bs...
+bounce counts!
 
 '''
 
