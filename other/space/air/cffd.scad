@@ -30,7 +30,7 @@ h = 44;
     wingOffset = bd/2-2;
     wingOffsetz = 2;
 fl = 33;
-fh = h/4;
+fh = h/2;
 fhh = h/9;
 
 td = 9;
@@ -42,8 +42,8 @@ td = 9;
 
 // rotate([0,0, $t *11])  
  //rotate([0,80, 0])  
-cc();
-s = 3;
+//cc();
+s = 10;
  translate([-70,0, -110])  scale([s, s, s]) cc();
  
 // ff(); //mostly for scale
@@ -82,7 +82,7 @@ module tail(){
     n = 3;
     a = 111; //360/n;
     for(i=[-1,,1]) rotate([0,0, i*a])
- rotate([0,0, i*a + $t *11*-i])  
+ rotate([0,0, i*a + $t*$t *11*-i])  
         translate([-7,0, 0 ]) tf();
             
     }
