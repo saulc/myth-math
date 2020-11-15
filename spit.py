@@ -1,7 +1,7 @@
 
 import time
 from math import pi, cos, sin, tan
-from random import shuffle, randrange
+from random import   randrange, random
 import breakdown
 #test program to spit words back. . .
 
@@ -23,13 +23,12 @@ class spit:
         return temp
 
         #
-
     def slp(self,  mm,  showTimeStamps=False):
         t = time. ctime()
         m = mm / 100
-        time. sleep(m)
-        tt = time. ctime()
-        if showTimeStamps:  print(t,  " . . " ,  tt)
+        time. sleep(m) ## there should be work here but there isn't. duh...
+        tt =  ' ...' #time.ctime()
+        if showTimeStamps:  print(tt,  " . . " ,  tt)
         # return 1
 
     def adm(self, ii=1):
@@ -82,7 +81,7 @@ class spit:
         return sm
 
 #general timed printer, with new line pause 't' spaces/characters...
-    def tp(self, msg,  t=44):
+    def tp(self, msg,  t=44, showTimeStamps=False):
         ms = len(msg) #msg list of words/num/block/wtevr
         breakdown.show(' msg length in chars: ' + str(ms))
         sm = [0, 0]
@@ -94,7 +93,8 @@ class spit:
             if i %t == 0:
                 g += ' \n'
             print(g, end=' ')
-            self.slp(t, True)
+            # breakdown.show( g)
+            self.slp(t, showTimeStamps)
         return sm
 
 
@@ -115,37 +115,38 @@ def rad(deg):
 def abc(astring): pass
     #take a string, put the 'words' in abc order...
 
-def stoL(astring):
+def stoL(astring, mix=False):
     wd = astring.split(' ')
     rt = []
     for w in wd:
         rt.append( w )
+    if mix :  random.shuffle(rt)
     return rt #list for now.. #made this a string too tho.....
 
 
-
+pl = 'ce at the We react to the video of the day, answer fan questions via social media, play games and discuss her experience at the'
 skl = 'CalTech CalSci CMU harveyMudd Cambridge Oxford' #Berkley Cornell Stanford UC CSU Slo Po MIT Hop'
 ivish = 'Stanford Harvard Mit Yale princeton Columbia Dude NotreDame Cornel Berkley USC UCLA'
 vlginto = "Hi! My name is (rhymes with peachy) and I live in New York City. New videos on my channel every week! I upload vlogs, tech reviews, how-to / behind the scenes travel & lifestyle  "
 # prms = [ 1,  2,  3,  5,  7,  11,  17,  23,  37,  47,  57,  67,  79,  83,  91] #. . . ?
 # # iniit stuff here but whatever. . .
-l = spit()
-# # l. slp(10)
-a = l. tt(skl,  333,  121 )
-a = l.tt(ivish,  333,  221 )
-print('   More schools... ')
-# a = l. tt(ivish,  333,  51 )
-print('   -- College acceptance test -- ')
-
-
-
 # l = spit()
+# # # l. slp(10)
+# # a = l. tt(skl,  333,  121 )
+# a = l.tt(ivish,  333,  221 )
+# print('   More schools... ')
+# # a = l. tt(ivish,  333,  51 )
+# print('   -- College acceptance test -- ')
+
+
+
+l = spit()
 # filename = "ee.txt"
 # fc = l.openFile(filename)
 # breakdown.show('print spit test 33')
 # # breakdown.show( fc )
-# # l.tp( fc, 22)
-# l.tp( stoL(fc) , 22)
+# l.tp( fc, 22)
+l.tp( stoL(pl, True) , 22, True)
 # breakdown.show( skl )
 # print(fc)
 # print( '   ', skl)

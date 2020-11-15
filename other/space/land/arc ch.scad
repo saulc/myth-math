@@ -22,7 +22,24 @@ fn = 55;
 
 
 //    for(i=[0:2]) translate([ 0, i*width*1.1 , 0])
-  %  trip();
+//  %  trip();
+
+
+loop();
+
+
+module loop(){
+        n = dis / height;
+        k= n*1.2;
+        k = 180;
+        echo(k);
+        for(i=[-k: k]) 
+//        translate([i*(height+11), 0,   - .314159*(i*i) ]) 
+//       rotate([0, 0, i*11])   
+        translate([0, height, 0]) rotate([0, 0, 0])  block(width, height); 
+	 
+    
+}
 
 
 module trip(){  

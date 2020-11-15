@@ -163,15 +163,16 @@ def getuserval(msg,  printInput=False ):
     return i
 
 if __name__ == '__main__':
-    # t = 20*7*52 #*1000
-    # m = convert(t)
+    t = 20*7*52 #*1000
+    m = convert(t)
     # # m.setVal(t)
     # m.demo()
     # print( str(t) )
     tt = getuserval("Enter a value(hours) to Convert: ", True)
-    # tt = 1/12  # 5 mins. 300 seconds...
+    # # tt = 1/12  # 5 mins. 300 seconds...
     m = convert(tt)
     m.demo()
-    # m.testStrings(rc, "anything else?  ...")
+
+    # m.testStrings(t, "anything else?  ...")
 
     # m.getCommandArgs
