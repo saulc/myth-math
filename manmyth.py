@@ -62,7 +62,7 @@ class myth():
         elif type == 1: #compound annual
             a = self.compountInterest(p, r, n, t)
         elif type == 2: #compound monthly
-            n = 12
+            n = 12 
             a = self.compountInterest(p, r, n, t)
         elif type == 3: #compound quarterly
             n = 4
@@ -190,7 +190,7 @@ if __name__ == '__main__':
     er = breakdown.rankSplit( tt , 21, True, True)
     #amount/ parts/ show details/ show single line info
     breakdown.show('Stepped split breakdown.')
-    k = 88  #990
+    k = 99990
     for i in range(3,k, k//10):
         #stay an order of mag down in step to keep the results on the screen... less...
         ee = breakdown.evenSplit( tt , i, False, True) #amount/ parts/ show details/ show single line info
