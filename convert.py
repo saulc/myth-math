@@ -48,6 +48,7 @@ class convert():
     def __init__(self, v=0):
         if v == 0: pass
         else:  self.val = v
+        self.dat = []
         # self.rc = ReadConfig("testing... 1 2 3")
         # self.mparse = self.rc.getCommandArgs(False)
         # print(self.mparse)
@@ -128,21 +129,27 @@ class convert():
         return self.hrtoDay(self.mintoHr(self.sectoMin(s)))
 
     def demoHr2ms(self):
-        print ('    ', "Hours   :" , "{:,.1f}".format( self.getVal()) )
-        print ('    ', "minutes : " , "{:,.1f}".format( self.hrtoMin()) )
-        print ('    ', "seconds : " , "{:,.1f}".format( self.hrtoSec()) )
-        print ('    ', "micros  : " , "{:,.2f}".format( self.hrtoMs()) )
-        print ('    ', "nanos   : " , "{:,.0f}".format( self.hrtoNs()) )
+        self.prt ( "    Hours   : {:,.1f}".format( self.getVal()) )
+        self.prt ( "    minutes :  {:,.1f}".format( self.hrtoMin()) )
+        self.prt ( "    seconds :  {:,.1f}".format( self.hrtoSec()) )
+        self.prt ( "    micros  :  {:,.2f}".format( self.hrtoMs()) )
+        self.prt ( "    nanos   :  {:,.0f}".format( self.hrtoNs()) )
+        self.prt ( "{:.0f}".format( self.hrtoSec()) ,False)
 
  # split to switch on input operators h d w m y Me Cen Dec eon = 100kyr? 1m?
  # operation string fifo display
     def demoHr2yrs(self):
-        print ('    ', "Hours  : " , "{:,.1f}".format( self.getVal()) )
-        print ('    ', "Days   : " ,  "{:,.1f}".format(self.htoDays()) )
-        print ('    ', "Weeks  : " , "{:,.1f}".format(self.htoWeeks()) )
-        print ('    ', "Months : " , "{:,.2f}".format( self.htoMonths()) )
-        print ('    ', "Years  : " , "{:,.3f}".format( self.htoYears()) )
-        print ('    ', "M     : " , "{:,.1f}".format( self.htoYears()//1000 ) )
+        self.prt (  "    Hours  :  {:,.1f}".format( self.getVal()) )
+        self.prt (  "    Days   :  {:,.1f}".format(self.htoDays()) )
+        self.prt (  "    Weeks  :  {:,.1f}".format(self.htoWeeks()) )
+        self.prt (  "    Months :  {:,.2f}".format( self.htoMonths()) )
+        self.prt (  "    Years  :  {:,.3f}".format( self.htoYears()) )
+        self.prt (  "    M     :   {:,.1f}".format( self.htoYears()//1000 ) )
+
+    def prt(self, msg, printerOn=True):
+        self.dat.append(msg)
+        if printerOn: print( msg )
+
 
     def demo(self):
         m = self
@@ -157,9 +164,9 @@ class convert():
 def getuserval(msg,  printInput=False ):
     print(msg)
     n = input()
-    i = int( n )
+    i = float( n )
     if printInput:
-        print("Value input: " ,  "{:, .2f}".format( i) )
+        print("Value input: " ,  "{:,.2f}".format( i) )
     return i
 
 if __name__ == '__main__':
@@ -171,6 +178,14 @@ if __name__ == '__main__':
     tt = getuserval("Enter a value(hours) to Convert: ", True)
     m = convert(tt)
     m.demo()
+    # return the seconds as an int
+    s = m.dat[ len(m.dat)-1]
+    # i = int(s)
+
+    print( 's ' +  s )
+    # i = int(s)
+    # m = convert(i)
+    # m.demo()
     # m.testStrings(rc, "anything else?  ...")
 
     # m.getCommandArgs
