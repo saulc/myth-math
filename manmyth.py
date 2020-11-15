@@ -14,8 +14,8 @@ class myth():
     conv = 7250
     workers = 10*1000000
     hoursper =  33 #40 # 12*6
-    amount =  1000*1000
-    # amount = 277031758 # *10000000*1000
+    # amount =  1000*1000
+    amount = 277031758 # *10000000*1000
     # amount = 277031758 # *10000000*1000
     # 200 quadrillion = 15m x 12.82 billion global basic income?
     # us/ 15k x 320m. 4t per year...
@@ -62,7 +62,7 @@ class myth():
         elif type == 1: #compound annual
             a = self.compountInterest(p, r, n, t)
         elif type == 2: #compound monthly
-            n = 12 
+            n = 12
             a = self.compountInterest(p, r, n, t)
         elif type == 3: #compound quarterly
             n = 4
@@ -163,9 +163,9 @@ if __name__ == '__main__':
     # m.demo()
     # 1 year == 8760 == 525600
 
-    tt =      1111111
-    hrt = 323 #34359738368
-    years = 4
+    tt =     173611118613591255  #7786596106
+    hrt = 404            #34359738368
+    years = 88
     # prompt user for values,  do the math. with some formatting. .
     # t = getuserval("Enter a value( $ ) to analyze time divisions:",  True)
     # hrt = getuserval("Enter a hourly rate( $/hr ) : ")
@@ -190,10 +190,10 @@ if __name__ == '__main__':
     er = breakdown.rankSplit( tt , 21, True, True)
     #amount/ parts/ show details/ show single line info
     breakdown.show('Stepped split breakdown.')
-    k = 99990
+    k = 111
     for i in range(3,k, k//10):
         #stay an order of mag down in step to keep the results on the screen... less...
-        ee = breakdown.evenSplit( tt , i, False, True) #amount/ parts/ show details/ show single line info
+        ee = breakdown.evenSplit( er , i, False, True) #amount/ parts/ show details/ show single line info
         tsum.append( ee )
         tol += ee
     # rn = breakdown.bigSplit( t ,3, div, True)

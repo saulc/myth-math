@@ -128,7 +128,7 @@ class convert():
         return self.hrtoDay(self.mintoHr(self.sectoMin(s)))
 
     def demoHr2ms(self):
-        print ('    ', "Hours   :" , "{:,.1f}".format( self.getVal()) )
+        print ('    ', "Hours   :" , "{:,.3f}".format( self.getVal()) )
         print ('    ', "minutes : " , "{:,.1f}".format( self.hrtoMin()) )
         print ('    ', "seconds : " , "{:,.1f}".format( self.hrtoSec()) )
         print ('    ', "micros  : " , "{:,.2f}".format( self.hrtoMs()) )
@@ -137,11 +137,11 @@ class convert():
  # split to switch on input operators h d w m y Me Cen Dec eon = 100kyr? 1m?
  # operation string fifo display
     def demoHr2yrs(self):
-        print ('    ', "Hours  : " , "{:,.1f}".format( self.getVal()) )
-        print ('    ', "Days   : " ,  "{:,.1f}".format(self.htoDays()) )
-        print ('    ', "Weeks  : " , "{:,.1f}".format(self.htoWeeks()) )
-        print ('    ', "Months : " , "{:,.2f}".format( self.htoMonths()) )
-        print ('    ', "Years  : " , "{:,.3f}".format( self.htoYears()) )
+        print ('    ', "Hours  : " , "{:,.3f}".format( self.getVal()) )
+        print ('    ', "Days   : " ,  "{:,.5f}".format(self.htoDays()) )
+        print ('    ', "Weeks  : " , "{:,.5f}".format(self.htoWeeks()) )
+        print ('    ', "Months : " , "{:,.7f}".format( self.htoMonths()) )
+        print ('    ', "Years  : " , "{:,.11f}".format( self.htoYears()) )
         print ('    ', "M     : " , "{:,.1f}".format( self.htoYears()//1000 ) )
 
     def demo(self):
@@ -157,20 +157,22 @@ class convert():
 def getuserval(msg,  printInput=False ):
     print(msg)
     n = input()
-    i = int( n )
+    i = float( n )
     if printInput:
-        print("Value input: " ,  "{:, .2f}".format( i) )
+        print("Value input: " ,  "{:,.5f}".format( i ) )
     return i
 
 if __name__ == '__main__':
-    # t = 20*7*52 #*1000
-    # m = convert(t)
+    t = 20*7*52 #*1000
+    m = convert(t)
     # # m.setVal(t)
     # m.demo()
     # print( str(t) )
     tt = getuserval("Enter a value(hours) to Convert: ", True)
+    # # tt = 1/12  # 5 mins. 300 seconds...
     m = convert(tt)
     m.demo()
-    # m.testStrings(rc, "anything else?  ...")
+
+    # m.testStrings(t, "anything else?  ...")
 
     # m.getCommandArgs
