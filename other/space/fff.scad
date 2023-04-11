@@ -14,8 +14,8 @@ fn = 60;
 //h = 66;
 cd = 3; //cone diameter
 cdd = 7; 
-bd = 12;
-h = 44;
+bd = 15;
+h = 5 4;
    d2 = bd+3;
    hh = 5;
    
