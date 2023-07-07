@@ -23,12 +23,10 @@
 //all shapes centered at 0, 0 for easy rotation
 
 // r prefix rounded
-// rrc(10, 20 ,30, 4, 5);
+//rrc(10, 20 ,30, 4, 5);
+//sp(11, 44);
 
 fn = 50;
-
-
-sp(100, fn);
 
 module c(w, l, d){
     translate([0,0,0]) cube([w, l, d], center=true);
@@ -42,15 +40,8 @@ module cy(d, h, f){
 }
 
 module sp(d, f){  
-    hull(){
-    translate([0,0,0])    cy(d, 1);
-        for(i=[0 :2]) 
-    rotate([0,120*i,0])    cy(d, 1);
-//    rotate([0,90,0])    cy(d, 1);
-    rotate([90,0,0])    cy(d, 1); 
-//    translate([0,0,0])    cy(1, d);
-    }
-} 
+    translate([0,0,0])    sphere(d=d, $fn=f);
+}
 
 module rcy(d, h, c, fn){
 	minkowski(){
@@ -78,11 +69,31 @@ module rrc(w, h, d, c, s){
 
 
 
-module slot(d, l, h){
+module slot(d, h, l){
     hull(){
-         translate([0,l/2-d/2,0]) cy(d, h);
-            translate([0,-l/2+d/2,0]) cy(d, h);
-    }
-    
+        holes(d, h, l);
+    } 
 }
+
+module cn(d, d2, h ,h2  , ff = fn ){ 
+         rotate([0,0,90])  hull(){ 
+                 translate([ 0, 0, h/2])   cy(d2, h, ff);  
+                 translate([ 0, 0, h2/2])  cy(d, h2, ff); 
+          }
+}
+                   
+
+  
+module cs(d, d2, h, x ){
+    
+                  for(i=[-1,1])  translate([ i*x/2, 0, 0])  cn(d, d2, h/3, h);
+}
+
+module holes(d, h, x, ff = fn){
+    
+                  for(i=[-1,1])  translate([ i*x/2, 0, h/2])  rotate([0,0,90]) cy(d, h, ff); 
+}
+                   
+  
+
 

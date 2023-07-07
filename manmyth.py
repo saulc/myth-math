@@ -15,7 +15,7 @@ class myth():
     workers = 10*1000000
     hoursper =  40 #40 # 12*6
     # amount =  1000*1000
-    amount = 277031758 # *10000000*1000
+    amount = 277031758  *10000000*1000
     # amount = 277031758 # *10000000*1000
     # 200 quadrillion = 15m x 12.82 billion global basic income?
     # us/ 15k x 320m. 4t per year...
@@ -167,10 +167,10 @@ if __name__ == '__main__':
     hrt = 17            #34359738368
     years = 1
     # prompt user for values,  do the math. with some formatting. .
-    # t = getuserval("Enter a value( $ ) to analyze time divisions:",  True)
-    # hrt = getuserval("Enter a hourly rate( $/hr ) : ")
-    # years = getuserval("Enter #yx:  ",  True)
-    # cv = convert()
+    t = getuserval("Enter a value( $ ) to analyze time divisions:",  True)
+    hrt = getuserval("Enter a hourly rate( $/hr ) : ")
+    years = getuserval("Enter #yx:  ",  True)
+    cv = convert()
     m = myth(tt)
     m. setHrRate(hrt)
     m. setYears(years)

@@ -12,7 +12,7 @@ i don't like basebaall. . but i know most of the rules. . .
 3 out, 3 in, 3 other. pitch, catch, short(mid)stop
 time independent
 1-4 offence vs. 3x3 defence
-walks get runs. gdouble can get 2 runs?
+walks get runs. gdouble can get 3 runs?
 basebaall is bs...
 bounce counts!
 

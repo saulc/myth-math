@@ -56,10 +56,10 @@ module cc(){
         
 //          translate([-12,  0,0 ])     thrusters();
 //        maintanks();
-        for(i=[-1,1]) translate([0,  i*ww, ])  
-                 rotate([0,0,  0])   thrusters(); //turbofan/edf/
+//        for(i=[-1,1]) translate([0,  i*ww, ])  
+//                 rotate([0,0,  0])   thrusters(); //turbofan/edf/
         tail();
-        jets();
+//        jets();
     }
 }
 
