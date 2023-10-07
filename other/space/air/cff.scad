@@ -13,19 +13,19 @@ fn = 60;
 //bd = 12;
 //h = 66;
 
-    n = 11;
+    n = 6;
 cd = 3; //cone diameter
 cdd = 7; 
-    ww  = 7; //dual hull spacing
-h = 74;
+    ww  = 17; //dual hull spacing
+h = 104;
 
 bd = 15;
 d2 = bd+3;
 hh = 5;
    //------------------
    //------ wings -----
-    zz = 7; //sweep back.
-    wingAngle = 3;
+    zz = 17; //sweep back.
+    wingAngle = 13;
    
     wingOffset = 0; //bd/4;
     wingOffsetz = -25;
@@ -57,15 +57,15 @@ module cc(){
         difference(){
             union(){
                     shell(bd, 3); 
-//                intake();
+                intake();
             }
             incut();
         }
         
 //          translate([-12,  0,0 ])     thrusters();
 //        maintanks();
-//        for(i=[-1,1]) translate([0,  i*ww, ])  
-//                 rotate([0,0,  0])   thrusters(); //turbofan/edf/
+        for(i=[-1:1]) translate([0,  i*ww, ])  
+                 rotate([0,0,  0])   thrusters(); //turbofan/edf/
         tail();
         jets(); 
     }
@@ -143,7 +143,7 @@ module subtanks(){
          a = 360/n;
            for(j=[0:1]) translate([0,0, 5-j*7]) 
        for(i=[0:n-1]) rotate([0,0, i*a]) translate([0,5, 0]) 
-        translate([0,0,td ])  tank(5, 3);
+        translate([0,0,td ])  tank(5, 6);
    }
    
    

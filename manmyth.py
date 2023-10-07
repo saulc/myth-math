@@ -171,7 +171,7 @@ if __name__ == '__main__':
     hrt = getuserval("Enter a hourly rate( $/hr ) : ")
     years = getuserval("Enter #yx:  ",  True)
     cv = convert()
-    m = myth(tt)
+    m = myth(t)
     m. setHrRate(hrt)
     m. setYears(years)
     y,  t = m.demo()
