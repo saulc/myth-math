@@ -64,7 +64,5 @@ for k in range(im.height):
 			out.putpixel((i+im.width*0, k+im.height), pink)
 			out.putpixel((i+im.width*1, k+im.height), green)
 			out.putpixel((i+im.width*2, k+im.height), red)
-out.save("muse3.jpg")
-
-
+# out.save("muse3.jpg")
 out.show()
