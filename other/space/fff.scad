@@ -3,7 +3,7 @@
 
 use <myshapes.scad> 
  
- 
+ use<fdf.scad>
  
 fn = 60;
 
@@ -26,12 +26,15 @@ fhh = h/9;
 
 td = 9;
 
-color("green")
-#c(100, 100, 1);
+//color("green")
+//#c(100, 100, 1);
 
+ translate([-bd/2-1-$t*11,  0, 4+$t*22])  
+ scale([.26,.26, .25])  
+ff();
 
-
- rotate([0,0, $t *11])  
+ rotate([0,0, 30])  
+ scale([.6,.6, .5])  
 cc();
  
 //       translate([20,0, 0])  
@@ -53,7 +56,7 @@ module cc(){
 
 module maintanks(){   
         translate([0,0,11 ])  tank(4,  8);
-        translate([0,0,24 ])  tank(6,  13);
+        translate([0,0,26 ])  tank(6,  15);
    }
    
    

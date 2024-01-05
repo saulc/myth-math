@@ -125,6 +125,6 @@ class ReadConfig:
 
 
 if __name__ == '__main__':
-    # config = openFile()
-    # //f = printFile(config)
-    readInput()
+    config = openFile()
+    //f = printFile(config)
+    # readInput()

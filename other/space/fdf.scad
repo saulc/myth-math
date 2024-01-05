@@ -33,20 +33,20 @@ td = 9;
 
 
 // rotate([0,0, $t *11])  
-cc();
+ff();
  
 //       translate([20,0, 0])  
 // scaleex();
  
  
-module cc(){ 
+module ff(){ 
     union(){
         difference(){
          %   shell(bd, 3); 
         }
         
          
-//        maintanks();
+        maintanks(); 
         subtanks();
        thrusters(); //turbofan/edf/
         tail();
@@ -78,7 +78,7 @@ module tf(){
    
 module maintanks(){   
         translate([0,0,11 ])  tank(4,  8);
-        translate([0,0,24 ])  tank(6,  13);
+        translate([0,0,24 ])  tank(6,  15);
    }
    
    
@@ -151,7 +151,7 @@ module wg(){
        translate([0,bd/2-2, 0])  
     union(){
         //turbofans
-        # translate([-5,fl/3,0])  cy(7, 7, fn);
+        # translate([-5, $t*fl/3,0])  cy(7, 7, fn);
 //        # translate([-3,fl/2,0])  cy(3, 7, fn);
         hull(){
             

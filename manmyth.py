@@ -150,7 +150,7 @@ class myth():
 def getuserval(msg,  printInput=False ):
     print(msg)
     n = input()
-    i = int( n )
+    i = float( n )
     if printInput:
         print("Value input: " ,  "{:,.2f}".format( i) )
     return i
@@ -167,13 +167,15 @@ if __name__ == '__main__':
     hrt = 17            #34359738368
     years = 1
     # prompt user for values,  do the math. with some formatting. .
-    t = getuserval("Enter a value( $ ) to analyze time divisions:",  True)
+    to = getuserval("Enter a value( $ ) to analyze time divisions:",  True)
     hrt = getuserval("Enter a hourly rate( $/hr ) : ")
     years = getuserval("Enter #yx:  ",  True)
     cv = convert()
+    t = to
     m = myth(t)
     m. setHrRate(hrt)
     m. setYears(years)
+
     y,  t = m.demo()
     msg = 'Starting Value $ {:.2f}'.format(y) + ' total $: {:,.2f}'.format(t)
     breakdown.show(msg)
@@ -185,9 +187,14 @@ if __name__ == '__main__':
     # cut up a value for part/time break down analaysis...
     # tsum = [ ]
     # tol = 0
-    # breakdown.show(' ------- ')
-    # breakdown.show('rank split breakdown.')
-    # er = breakdown.rankSplit( tt , 21, True, True)
+
+    breakdown.show(' ------- ')
+    breakdown.show('rank split breakdown.')
+    er = breakdown.rankSplit( t , 21, True, True)
+
+    breakdown.show(' Total ')
+    breakdown.show('rank split breakdown.')
+    er = breakdown.rankSplit( to , 21, True, True)
     # #amount/ parts/ show details/ show single line info
     # breakdown.show('Stepped split breakdown.')
     # k = 111

@@ -1,0 +1,48 @@
+['Once', 'upon', 'a', 'time', 'someone', 'when', 'some', 'where', 'and', 'some', 'thing', 'happens', "That's", 'a', 'story\n']
+Once
+upon
+a
+time
+someone
+when
+some
+where
+and
+some
+thing
+happens
+That's
+a
+story
+
+Once Once Once     upon Once a Once time Once     someone Once when Once some Once     where Once and Once some Once     thing Once happens Once That's Once     a Once story
+ Once upon Once upon     upon upon a upon time upon     someone upon when upon some upon     where upon and upon some upon     thing upon happens upon That's upon     a upon story
+ upon a Once a     upon a a a time a     someone a when a some a     where a and a some a     thing a happens a That's a     a a story
+ a time Once time     upon time a time time time     someone time when time some time     where time and time some time     thing time happens time That's time     a time story
+ time someone Once someone     upon someone a someone time someone     someone someone when someone some someone     where someone and someone some someone     thing someone happens someone That's someone     a someone story
+ someone when Once when     upon when a when time when     someone when when when some when     where when and when some when     thing when happens when That's when     a when story
+ when some Once some     upon some a some time some     someone some when some some some     where some and some some some     thing some happens some That's some     a some story
+ some where Once where     upon where a where time where     someone where when where some where     where where and where some where     thing where happens where That's where     a where story
+ where and Once and     upon and a and time and     someone and when and some and     where and and and some and     thing and happens and That's and     a and story
+ and some Once some     upon some a some time some     someone some when some some some     where some and some some some     thing some happens some That's some     a some story
+ some thing Once thing     upon thing a thing time thing     someone thing when thing some thing     where thing and thing some thing     thing thing happens thing That's thing     a thing story
+ thing happens Once happens     upon happens a happens time happens     someone happens when happens some happens     where happens and happens some happens     thing happens happens happens That's happens     a happens story
+ happens That's Once That's     upon That's a That's time That's     someone That's when That's some That's     where That's and That's some That's     thing That's happens That's That's That's     a That's story
+ That's a Once a     upon a a a time a     someone a when a some a     where a and a some a     thing a happens a That's a     a a story
+ a story
+ Once story
+     upon story
+ a story
+ time story
+     someone story
+ when story
+ some story
+     where story
+ and story
+ some story
+     thing story
+ happens story
+ That's story
+     a story
+ story
+ story

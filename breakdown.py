@@ -184,9 +184,9 @@ def bigSplit(a, n, nn, showSplit=False, si = False):
     evenSplit(hf, nn, showSplit,  si)
     return hf
 
-def adsp(msg):
-    msg+= '\n'
-    return msg
+def adsp(m):
+    m+= '\n'
+    return m
 
 def showDiv( amount=10000.00, divs=11.1, sh=False):
     # self.setVal(amount)
@@ -263,10 +263,10 @@ def showL(lst, showIndex = False):
 if __name__ == '__main__':
     # t = 20*7*52 #*1000
         # prompt user for values,  do the math. with some formatting. .
-        # t = getuserval("Enter a value( $ ) to analyze :",  True)
+        t = getuserval("Enter a value( $ ) to analyze :",  True)
         # f = getuserval("Enter number of items (1. f):  ",  False)
         # t = 11*365*10   #*1000000
-        t = 3277777
+        # t = 3277777
         f = 15
         tt=0
         l = [t, f, tt]

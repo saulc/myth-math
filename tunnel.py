@@ -21,8 +21,8 @@ class Ring:
         self.vy = 0
 
     def draw(self, screen):
-        pygame.draw.ellipse(
-        screen, self.color, [self.x, self.y, self.xsize, self.ysize], 1)
+        pygame.draw.ellipse(screen, self.color, [self.x, self.y, self.xsize, self.ysize], 1)
+        pygame.draw.rect(screen, self.color, [self.x, self.y, self.xsize, self.ysize], 1)
 
     def update(self):
         self.color = Circles.c2[self.cc]

@@ -54,7 +54,7 @@ s = 10;
 module cc(){ 
     union(){
         difference(){
-            shell(bd, 3); 
+       %     shell(bd, 3); 
         }
         
 //          translate([-12,  0,0 ])     thrusters();

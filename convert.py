@@ -142,7 +142,7 @@ class convert():
         print ('    ', "Weeks  : " , "{:,.5f}".format(self.htoWeeks()) )
         print ('    ', "Months : " , "{:,.7f}".format( self.htoMonths()) )
         print ('    ', "Years  : " , "{:,.11f}".format( self.htoYears()) )
-        print ('    ', "M     : " , "{:,.1f}".format( self.htoYears()//1000 ) )
+        print ('    ', "M     : " , "{:,.1f}".format( self.htoYears()/1000 ) )
 
     def demo(self):
         m = self

@@ -24,13 +24,13 @@ d2 = bd+3;
 hh = 5;
    //------------------
    //------ wings -----
-    zz = 17; //sweep back.
+    zz = 11; //sweep back.
     wingAngle = 13;
    
-    wingOffset = 0; //bd/4;
+    wingOffset = -4; //bd/4;
     wingOffsetz = -25;
 fl = 44;
-fh = 46;
+fh = 66;
 fhh = h/9;
 
 td = 9;
@@ -212,7 +212,7 @@ module wg(){
     
     union(){
         hull(){
-         translate([1,bd/2-5,fh/2])  cy(6, fh, fn);
+         translate([1,bd/2-5,fh/2])  cy(9, fh, fn);
          translate([0,bd/2+14,fh/2-2.5])  cy(3, fh/2, fn);
         }
         hull(){
