@@ -8,6 +8,17 @@ from 'The mythical man month'
 '''
 from convert import convert
 import breakdown
+import argparse
+
+
+def checkCommandArgs():
+	print("Popart image starting. . .")
+	parser = argparse.ArgumentParser()
+	parser.add_argument("-a", type=int, help="amount")
+	parser.add_argument("-r", type=int, help="rate")
+	parser.add_argument("-y", type=int, help="years")
+	args = parser.parse_args()
+	return args.a, args.r, args.y
 
 class myth():
 
@@ -29,6 +40,9 @@ class myth():
         if cv == 0:  self. amount = 1000*1000
         else:  self. amount = cv
         self.conv = convert(self.conv)
+
+
+
 
     def setVal(self, v):
         return self.conv.setVal(v)
@@ -166,10 +180,12 @@ if __name__ == '__main__':
     tt =     333333  #7786596106
     hrt = 17            #34359738368
     years = 1
+
+    to, hrt, years = checkCommandArgs()
     # prompt user for values,  do the math. with some formatting. .
-    to = getuserval("Enter a value( $ ) to analyze time divisions:",  True)
-    hrt = getuserval("Enter a hourly rate( $/hr ) : ")
-    years = getuserval("Enter #yx:  ",  True)
+    # to = getuserval("Enter a value( $ ) to analyze time divisions:",  True)
+    # hrt = getuserval("Enter a hourly rate( $/hr ) : ")
+    # years = getuserval("Enter #yx:  ",  True)
     cv = convert()
     t = to
     m = myth(t)
