@@ -22,7 +22,7 @@ h = 66;
     wingOffset = bd/2-2;
     wingOffsetz = 2;
 fl = 33; //span fl + bd + winglets
-fh = h/2;
+fh = h/3;
 fhh = h/9;
 
 td = 9;

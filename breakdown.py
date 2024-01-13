@@ -280,6 +280,7 @@ if __name__ == '__main__':
         show( " total $ {:,.2f}".format( t)  )
         tt += evenSplit(t, f,   False, True)
         tt = bigSplit(tt, f, 3,  False, True)
+        rk = rankSplit(t, 3, True)
         rk = rankSplit(t, 3*11, True)
         show( " total $ {:,.2f}".format( tt)  )
 

@@ -129,6 +129,8 @@ module shell(d,c){
        translate([10,0, h+d*2])  sp(cd,   fn);
        translate([0,0, h+d-2])  sp(cdd,   fn);
          
+       #translate([7,7, h+d])  sp(cdd,   fn);
+         
          //body
        translate([0,0, h/2])  cy(d, h, fn);
        translate([0,0, h/2])  cy(d2, hh, fn);

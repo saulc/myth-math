@@ -29,8 +29,10 @@ pur = (130, 60, 220)
 grey = (222, 222, 222)
 colors = (red, orange, yellow, green, teal, blue, pink, pur, grey)
 co = 1
-fn, co = checkCommandArgs()
-print(fn)
+fn = "./m16.png"
+# fn, co = checkCommandArgs()
+print("input file: " + fn)
+print("Running img filter...")
 im = Image.open(fn)
 l = im.getcolors()
 out = Image.new('RGB', (1000, 1000))
@@ -44,26 +46,39 @@ for k in range(im.height):
 	for i in range(im.width):
 		n = im.getpixel((i, k))
 		#print(str(n) + " ")
-		a = 130
+		a = 220
 		if n < (a,a,a):
-			n = (200, 0 , 0)
+			n = (200, 30 , 30)
 			out.putpixel((i, k), pink)
+			out.putpixel((int(i+im.width*1), k ), teal)
+			out.putpixel((int(i+im.width*2), k ), pur)
+			out.putpixel((i, k+im.height), n)
+			out.putpixel((int(i+im.width*1), k+im.height), orange)
+			out.putpixel((int(i+im.width*2), k+im.height), blue)
 		w = 220
 		if n > (w,w,w):
-			n =  (255, 255 , 255)
-			# out.putpixel((i, k), colors[i%8])
+			n =  grey
+			out.putpixel(( i, k ), n)
+			out.putpixel((int(i+im.width*1), k ), n)
+			out.putpixel((int(i+im.width*2), k ), n)
+			out.putpixel((i, k+im.height), pink)
+			out.putpixel((int(i+im.width*1), k+im.height), pink)
+			out.putpixel((int(i+im.width*2), k+im.height), pink)
 
-			for l in range(0, 2):
-				for j in range(0, 3):
-					out.putpixel((i+im.width*j, k+im.height*l), colors[(j+l+co)%8])
+			# for l in range(0, 2):
+			# 	for j in range(0, 3):
+			# 		out.putpixel((i+im.width*j, k+im.height*l), colors[(j+l+co)%8])
 		if( n>= (a,a,a) and n <= (w,w,w)):
+
+			out.putpixel((i, k), n)
+			out.putpixel((i, k*1), n)
 			# for j in range(0, 5):
 			# 	out.putpixel((i+im.width*j%3, k+im.height*j//3), colors[(j)])
-			out.putpixel((i, k), blue)
-			out.putpixel((i+im.width, k), pur)
-			out.putpixel((i+im.width*2, k), pink)
-			out.putpixel((i+im.width*0, k+im.height), pink)
-			out.putpixel((i+im.width*1, k+im.height), green)
-			out.putpixel((i+im.width*2, k+im.height), red)
+			# out.putpixel((int(i+1), k), blue)
+			# out.putpixel((int(i+im.width*1), k), pur)
+			# out.putpixel((int(i+im.width*2), k), pink)
+			# out.putpixel((int(i+im.width*0), k+im.height), pink)
+			# out.putpixel((int(i+im.width*1.05), int(k+im.height*.95)), green)
+			# out.putpixel((int(i+im.width*1.99), k+im.height), red)
 # out.save("muse3.jpg")
 out.show()

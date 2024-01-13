@@ -29,7 +29,7 @@ td = 9;
 //color("green")
 //#c(100, 100, 1);
 
- translate([-bd/2-1-$t*11,  0, 4+$t*22])  
+ translate([-$t*11,  0, h/2+9+$t*22])  
  scale([.26,.26, .25])  
 ff();
 
