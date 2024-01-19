@@ -25,7 +25,7 @@ hh = 5;
    //------------------
    //------ wings -----
     zz = 11; //sweep back.
-    wingAngle = 13;
+    wingAngle = 3;
    
     wingOffset = -4; //bd/4;
     wingOffsetz = -21;
@@ -43,7 +43,7 @@ td = 9;
 // rotate([0,0, $t *11])  
  //rotate([0,80, 0])  
 //cc();
-s = 10;
+s = 100;
  translate([-70,0, -300])  scale([s, s, s]) 
  cc();
  

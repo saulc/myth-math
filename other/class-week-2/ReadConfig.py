@@ -14,24 +14,24 @@ import sys
 
 class ReadConfig:
 
-    def openFile():
+    def openFile(self):
         file = open("test.txt", 'r')
         return file
 
-    def printFile(f):
+    def printFile(self, f):
         print(f.read())
 
-    def readInput():
+    def readInput(self):
 
         testout = "What is the adrs of your instn?"
         file = open("test.txt", 'r')
         s = str(file.read())
         words = s.split(" ");
         print(words)
-        checkRules(words)
+        self.checkRules(words)
 
 
-    def checkRules(words):
+    def checkRules(self, words):
             vowels = ["a","e", "i", "o","u"]
             #print(words[4])
             output = []
@@ -99,17 +99,17 @@ class ReadConfig:
     # ====================== +++++++++++++++++++++
     # ====================== +++++++++++++++++++++
     # ====================== +++++++++++++++++++++
-    def readInput(self):
-        print("reading Input . . . ")
-        print(" careful what you ask . . . ")
-        v = input()
-        words = v. split(' ')
-        i = 0
-        for w in words:
-            # split and process input for chainable operators
-            print ("  " ,i, w)
-            i+=1
-        return str(v)
+    # def readInput(self):
+    #     print("reading Input . . . ")
+    #     print(" careful what you ask . . . ")
+    #     v = input()
+    #     words = v. split(' ')
+    #     i = 0
+    #     for w in words:
+    #         # split and process input for chainable operators
+    #         print ("  " ,i, w)
+    #         i+=1
+    #     return str(v)
 
 
     def getParams(self):
@@ -125,6 +125,7 @@ class ReadConfig:
 
 
 if __name__ == '__main__':
-    config = openFile()
-    //f = printFile(config)
-    # readInput()
+    f = ReadConfig()
+    config = f.openFile()
+    f.printFile(config)
+    f.readInput()

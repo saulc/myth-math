@@ -51,6 +51,7 @@ for k in range(im.height):
 			n =  (255, 111 , 155)
 				# n =  (255, 255 , 255)
 			out.putpixel((i, k), n)
+			out.putpixel((i+im.width, k+im.height), n)
 		# if( n>= (a,a,a) and n <= (w,w,w)):
 # out.save("www.jpg")
 out.show()

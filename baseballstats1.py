@@ -89,7 +89,10 @@ class hit:
     #   "brand": "Ford",
     #   "model": "Mustang",
     #   "year": 1964
-    # }
+    # } atbat++, on base(0123) 23,12,13,1, hit: single, double, tripple hr
+    # bunt, update rbi. pitches, fouls...
+    # update hitter avg...game vs season vs career counts
+    
     thisHit = {
     'pitch' :  'blah' ,
     'game' :  'blah' ,
@@ -151,7 +154,7 @@ class feild:
 
 
 
-class Stats( ):
+class Stats:
 
     # black = pygame.Color(0, 0, 0)
     # white = pygame.Color(255, 255, 255)
@@ -164,32 +167,30 @@ class Stats( ):
 
     dpower = 10
 
-    def __init__(self, swidth, sheight, score=1000, leagues=11):
-        super().__init__(0, 0)
-        self.height = sheight
-        self.width = swidth
+    def __init__(self,   score=1000, leagues=11):
+        super().__init__()
         self.score = score
         self.shots = 0
         self.hits = 0
         self.gotHit = 0
         self.crash = 0
         self.powerUps = 0
-        self.power = power
-        self.Seasons = level
-        self.Leagues = leagues
+        self.power = self.dpower
+        self.seasons = 0
+        self.leagues = leagues
         self.wZero = 1000  #main skill
         self.wOne = 100     #strength //major
         self.wTwo = 10      #weak   //minor
         self.ws = [ self.wZero, self.wOne, self.wTwo]
 
     def getStatsString(self):
-        return 'Score: {0} | Seasons: {1} | Leagues: {2} | Shield: {3}'.format(self.score, self.lives, self.level, self.power)
+        return 'Score: {0} | Seasons: {1} | Leagues: {2} | Shield: {3}'.format(self.score, self.seasons, self.leagues,  self.power)
 
     def getFullStats(self):
         items = []
         items.append( myPair('Game Stats', ''))
         items.append( myPair('Score', self.score) )
-        items.append( myPair('Seasons', self.level) )
+        items.append( myPair('Seasons', self.seasons) )
         items.append( myPair('Leagues', self.leagues) )
         items.append( myPair('Shield', self.power) )
         items.append( myPair('Shots', self.shots) )
@@ -198,9 +199,9 @@ class Stats( ):
         items.append( myPair('Crashes', self.crash) )
         items.append( myPair('Power Ups', self.powerUps) )
 
-        items.append( myPair('Main Weapon', 'Unlimited' ) )
-        items.append( myPair('Left Gun', self.wepons[1]) )
-        items.append( myPair('Right Gun', self.wepons[2]) )
+        # items.append( myPair('Main Weapon', 'Unlimited' ) )
+        # items.append( myPair('Left Gun', self.wepons[1]) )
+        # items.append( myPair('Right Gun', self.wepons[2]) )
 
 
 
@@ -252,3 +253,10 @@ class Stats( ):
 if __name__ == '__main__':
     h = hit()
     h.printInfo()
+
+    s = Stats(score = 100, leagues=2 )
+    s.hit()
+    s.hit()
+    print(s.getStatsString())
+    for l in s.getFullStats():
+        print(l.getName() + " : " + str(l.getValue() ))

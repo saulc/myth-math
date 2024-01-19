@@ -19,12 +19,12 @@ wall = .1;
  
 // ss();
  
-s = 20;
- translate([-1800,0, 3000])  scale([s, s, s]) 
+s = 40;
+ translate([-1800,0, 2000])  scale([s, s, s]) 
  cc();
  
  scale([100,100, 100]) layout1();
-// scale([100,100, 100])  layout3();
+ scale([100,100, 100])  layout3();
  
  module layout3(){
      
@@ -40,8 +40,8 @@ s = 20;
      
  translate([0,0,bl*2+d/2]) mid();
      
-  for(i=[0, 1,  4]) translate([0,0,i*bl]) rotate([0,0, i*60]) mod();
-  for(i=[1,2]) translate([i*bl , 0, bl*2.5]) rotate([0,90,0]) mod(6);
+  for(i=[0, 1,  3, 4]) translate([0,0,i*bl]) rotate([0,0, i*60]) mod();
+  for(i=[1,2]) translate([i*bl , 0, bl*2.375]) rotate([0,90,0]) rotate([0,0,30])mod(6);
 //  for(i=[-1,1]) translate([d/2, i*bl,  bl*2.5]) rotate([90,0,0]) mod(9);
       
 //	translate([  d/4,  bl*1.6, 0])  rotate([90,0,90]) pattern(5, 60);  //more panels?
