@@ -68,9 +68,9 @@ module tf(){
     tll = 11;
     th = 11;
     
-        translate([-bd/2,0, tl+5 ]) 
+        translate([-bd/2,0, tll/2 ]) 
     hull(){
-        translate([-th,0, 0 ])  cy(1, tl, fn);  
+        translate([-th,0, -(tll-tl)/2 ])  cy(1, tl, fn);  
         translate([0,0,0 ])  cy(1, tll, fn);  
    }
    
@@ -114,6 +114,7 @@ module tank( h, c){
 module cone(d, dd, h){
      hull(){
        translate([0,0, h+d])  sp(d,  fn); 
+//       translate([0,0, h])  cy(d, 1, 3);
        translate([0,0, .1/2])  cy(dd, .1, fn);
          
      }

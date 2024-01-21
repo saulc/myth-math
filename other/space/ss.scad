@@ -24,7 +24,7 @@ s = 40;
  cc();
  
  scale([100,100, 100]) layout1();
- scale([100,100, 100])  layout3();
+// scale([100,100, 100])  layout3();
  
  module layout3(){
      

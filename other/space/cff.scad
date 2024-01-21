@@ -24,12 +24,12 @@ d2 = bd+3;
 hh = 5;
    //------------------
    //------ wings -----
-    zz = 11; //sweep back.
-    wingAngle = 3;
+    zz = 1-1; //sweep back.
+    wingAngle = 7;
    
     wingOffset = -4; //bd/4;
     wingOffsetz = -21;
-fl = 44;
+fl = 54;
 fh = 36;
 fhh = h/9;
 
@@ -42,10 +42,10 @@ td = 9;
 
 // rotate([0,0, $t *11])  
  //rotate([0,80, 0])  
-//cc();
-s = 100;
- translate([-70,0, -300])  scale([s, s, s]) 
- cc();
+cc();
+//s = 100;
+// translate([-70,0, -300])  scale([s, s, s]) 
+// cc();
  
  
 // translate([-20,0, 00]) cy(1, 2, fn);
@@ -67,10 +67,10 @@ module cc(){
         
 //          translate([-12,  0,0 ])     thrusters();
 //        maintanks();
-        for(i=[-1,1]) translate([0,  i*ww,0 ])  
-                 rotate([0,0,  0])   thrusters(); //turbofan/edf/
+//        for(i=[-1,1]) translate([0,  i*ww,0 ])  
+//                 rotate([0,0,  0])   thrusters(); //turbofan/edf/
         tail();
-        jets(); 
+//        jets(); 
     }
 }
 
@@ -127,9 +127,9 @@ module tf(){
     tll = 11;
     th = 21;
     
-        translate([0,0,  tll ]) 
+        translate([0,0,  tll/2 ]) 
     hull(){
-        translate([-th,0, -tll ])  cy(1, tl, fn);  
+        translate([-th,0, -(tll-tl)/2 ])  cy(1, tl, fn);  
         translate([0,0,0 ])  cy(1, tll, fn);  
    }
    
@@ -188,10 +188,11 @@ module shell(d,c){
          
          //body
        for(i=[-1,1]) translate([0,i*ww, h/2]) { 
-           cy(d, h, fn);
+           cy(d, h/2, fn);
             cy(d2, hh, fn);
        }
          
+           #rotate([0,0,60]) rcy(d*1.3, 11, 3, 3);
 //       translate([0,0-ww, h/2])  cy(d, h, fn);
 //       translate([0,0-ww, h/2])  cy(d2, hh, fn);
      }
@@ -215,12 +216,13 @@ module wg(){
     
     union(){
         hull(){
-         translate([1,bd/2-5,fh/2])  cy(9, fh, fn);
-         translate([0,bd/2+14,fh/2-2.5])  cy(3, fh/2, fn);
+         translate([3,0,fh/2])  cy(bd, fh, fn);
+         translate([1,bd/2+14,fh/2-2.5])  cy(3, fh/2, fn);
         }
         hull(){
             
-            translate([0,0, fh/2])  cy(3, fh, fn);
+         translate([1,bd/2+14,fh/2-2.5])  cy(3, fh/2, fn);
+//            translate([0,0, fh/2])  cy(3, fh, fn);
             translate([0,fl, fhh/2+zz])  cy(1, fhh, fn);
         }
         hull(){
