@@ -88,6 +88,8 @@ class convert():
     def htoYears(self):
         return self.htoMonths()/12
 
+    def mctoMs(self, mc): return mc//1000
+
     def mstoSec(self, ms): return ms//1000
 
     def sectoMin(self, s):
@@ -117,8 +119,11 @@ class convert():
     def hrtoMs(self):
         return 1000* self.hrtoSec()
 
+    def hrtoMc(self):
+        return 1000* self.hrtoMs()
+
     def hrtoNs(self):
-        return 1000*1000* self.hrtoSec()
+        return 1000* self.hrtoMc()
  # ====================== +++++++++++++++++++++
   # ====================== +++++++++++++++++++++
    # ====================== +++++++++++++++++++++
@@ -131,17 +136,18 @@ class convert():
         print ('    ', "Hours   :" , "{:,.3f}".format( self.getVal()) )
         print ('    ', "minutes : " , "{:,.1f}".format( self.hrtoMin()) )
         print ('    ', "seconds : " , "{:,.1f}".format( self.hrtoSec()) )
-        print ('    ', "micros  : " , "{:,.2f}".format( self.hrtoMs()) )
+        print ('    ', "mili    : " , "{:,.2f}".format( self.hrtoMs()) )
+        print ('    ', "micros  : " , "{:,.2f}".format( self.hrtoMc()) )
         print ('    ', "nanos   : " , "{:,.0f}".format( self.hrtoNs()) )
 
  # split to switch on input operators h d w m y Me Cen Dec eon = 100kyr? 1m?
  # operation string fifo display
     def demoHr2yrs(self):
         print ('    ', "Hours  : " , "{:,.3f}".format( self.getVal()) )
-        print ('    ', "Days   : " ,  "{:,.5f}".format(self.htoDays()) )
-        print ('    ', "Weeks  : " , "{:,.5f}".format(self.htoWeeks()) )
-        print ('    ', "Months : " , "{:,.7f}".format( self.htoMonths()) )
-        print ('    ', "Years  : " , "{:,.11f}".format( self.htoYears()) )
+        print ('    ', "Days   : " ,  "{:,.4f}".format(self.htoDays()) )
+        print ('    ', "Weeks  : " , "{:,.6f}".format(self.htoWeeks()) )
+        print ('    ', "Months : " , "{:,.8f}".format( self.htoMonths()) )
+        print ('    ', "Years  : " , "{:,.12f}".format( self.htoYears()) )
         print ('    ', "M     : " , "{:,.1f}".format( self.htoYears()/1000 ) )
 
     def demo(self):

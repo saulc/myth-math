@@ -26,7 +26,7 @@ class myth():
     workers = 10*1000000
     hoursper =  40 #40 # 12*6
     # amount =  1000*1000
-    amount = 277031758  *10000000*1000
+    amount = 277031758  *10000000
     # amount = 277031758 # *10000000*1000
     # 200 quadrillion = 15m x 12.82 billion global basic income?
     # us/ 15k x 320m. 4t per year...
@@ -187,7 +187,7 @@ if __name__ == '__main__':
     # hrt = getuserval("Enter a hourly rate( $/hr ) : ")
     # years = getuserval("Enter #yx:  ",  True)
     cv = convert()
-    t = to
+    t = tt
     m = myth(t)
     m. setHrRate(hrt)
     m. setYears(years)
@@ -210,7 +210,7 @@ if __name__ == '__main__':
 
     breakdown.show(' Total ')
     breakdown.show('rank split breakdown.')
-    er = breakdown.rankSplit( to , 21, True, True)
+    er = breakdown.rankSplit( t , 21, True, True)
     # #amount/ parts/ show details/ show single line info
     # breakdown.show('Stepped split breakdown.')
     # k = 111
