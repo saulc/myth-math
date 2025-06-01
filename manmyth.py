@@ -12,7 +12,7 @@ import argparse
 
 
 def checkCommandArgs():
-	print("Popart image starting. . .")
+	print("starting. . .")
 	parser = argparse.ArgumentParser()
 	parser.add_argument("-a", type=int, help="amount")
 	parser.add_argument("-r", type=int, help="rate")
@@ -26,9 +26,8 @@ class myth():
     workers = 10*1000000
     hoursper =  40 #40 # 12*6
     # amount =  1000*1000
-    amount = 277031758  *10000000
-    # amount = 277031758 # *10000000*1000
-    # 200 quadrillion = 15m x 12.82 billion global basic income?
+    amount = 277031758  
+    # amount = 277031758 # *10000000*1000 
     # us/ 15k x 320m. 4t per year...
     #us gdp 2020-1 = 20 trillion.
     #1mill x 1mill = 1 trillion.
@@ -181,7 +180,7 @@ if __name__ == '__main__':
     hrt = 17            #34359738368
     years = 1
 
-    to, hrt, years = checkCommandArgs()
+    tt, hrt, years = checkCommandArgs()
     # prompt user for values,  do the math. with some formatting. .
     # to = getuserval("Enter a value( $ ) to analyze time divisions:",  True)
     # hrt = getuserval("Enter a hourly rate( $/hr ) : ")
@@ -189,8 +188,8 @@ if __name__ == '__main__':
     cv = convert()
     t = tt
     m = myth(t)
-    m. setHrRate(hrt)
-    m. setYears(years)
+    m.setHrRate(hrt)
+    m.setYears(years)
 
     y,  t = m.demo()
     msg = 'Starting Value $ {:.2f}'.format(y) + ' total $: {:,.2f}'.format(t)

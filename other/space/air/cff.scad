@@ -75,7 +75,7 @@ module cc(){
 }
 
 module jets(){
-     for(i=[-1,,1]) translate([bd-2,  i*bd/2, 10]) {
+     for(i=[-1,1]) translate([bd-2,  i*bd/2, 10]) {
         //turbofans
 //         translate([0,0,0])  cy(5, 7, fn);
 //         translate([0,5.5*i,0])  cy(5, 7, fn);

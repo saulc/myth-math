@@ -64,7 +64,7 @@ module cc(){
 }
 
 module jets(){
-     for(i=[-1,,1]) translate([bd-2,  i*bd/2, 10]) {
+     for(i=[-1,1]) translate([bd-2,  i*bd/2, 10]) {
         //turbofans
         # translate([0,0,0])  cy(5, 7, fn);
 //        # translate([-3,fl/2,0])  cy(3, 7, fn);
@@ -77,7 +77,7 @@ module tail(){
         translate([0,0, 0 ]) mirror([1,0,0]) tf();
     n = 3;
     a = 111; //360/n;
-    for(i=[-1,,1]) rotate([0,0, i*a])
+    for(i=[-1,1]) rotate([0,0, i*a])
  rotate([0,0, i*a + $t *11*-i])  
         translate([-7,0, 0 ]) tf();
             

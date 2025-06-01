@@ -6,7 +6,8 @@ Created on Oct 2, 2015
 import pygame
 
 class Ring:
-    start = 111
+    start = 88
+    sw = 1000
 
     def __init__(self , x, y, st=0, c = 0):
         self.x = x
@@ -20,9 +21,13 @@ class Ring:
         self.vx = 0
         self.vy = 0
 
-    def draw(self, screen):
+    def draw(self, screen): 
         pygame.draw.ellipse(screen, self.color, [self.x, self.y, self.xsize, self.ysize], 1)
-        pygame.draw.rect(screen, self.color, [self.x, self.y, self.xsize, self.ysize], 1)
+
+        # pygame.draw.ellipse(screen, self.color, [self.sw/2 + self.x/2, self.y, self.xsize, self.ysize], 1)
+        
+        # pygame.draw.ellipse(screen, self.color, [self.sw/2 - self.x/2, self.y, self.xsize, self.ysize], 1)
+      # pygame.draw.rect(screen, self.color, [self.x, self.y, self.xsize, self.ysize], 1)
 
     def update(self):
         self.color = Circles.c2[self.cc]
@@ -48,7 +53,7 @@ class Circles:
     orange = (255, 115, 90)
     colors = [black, white, red, im, green, gg, pink]
     c2 = [  orange, gg, red, im, green, pink]
-    sw = 777
+    sw = 1000
     maxspeed = 5
     upspeed = 3
     bg = 0
@@ -129,7 +134,7 @@ class Circles:
             r.vx = self.vx
             r.vy = self.vy
             r.cc = self.cc
-            if r.xsize >= Circles.sw or r.ysize >= Circles.sw or r.xsize <=2:
+            if r.xsize >= Circles.sw/2 or r.ysize >= Circles.sw/2 or r.xsize <=2:
                 Circles.circle.remove(r)
                 print('Circle removed')
 
@@ -174,17 +179,17 @@ class Circles:
                 if event.key == pygame.K_q:
                     self.addc()
                 if event.key == pygame.K_x:
-                    self.vx += 1
+                    self.vx += 10
                 if event.key == pygame.K_c:
-                    self.vx += -1
+                    self.vx += -10
                 if event.key == pygame.K_a:
                     self.vy += 1
                 if event.key == pygame.K_z:
                     self.vy += -1
                 if event.key == pygame.K_s:
-                    self.a += 3
+                    self.a += 1
                 if event.key == pygame.K_d:
-                    self.a -= 3
+                    self.a -= 1
                     # if self.a < 0 : self.a = 0
                 if event.key == pygame.K_b:
                     Circles.bg += 1
